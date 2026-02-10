@@ -40,7 +40,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <img
-              src="/brand/LOGO CARGO.png"
+              src="/brand/LOGO2 CARGO.png"
               alt="Pullman Cargo"
               className="h-10 w-auto object-contain"
             />
@@ -87,7 +87,7 @@ export function Header() {
                 <div className="flex flex-col gap-8 mt-10">
                   <Link href="/" className="group transition-transform duration-300 hover:scale-105">
                     <img
-                      src="/brand/LOGO CARGO.png"
+                      src="/brand/LOGO2 CARGO.png"
                       alt="Pullman Cargo"
                       className="h-10 w-auto object-contain"
                     />

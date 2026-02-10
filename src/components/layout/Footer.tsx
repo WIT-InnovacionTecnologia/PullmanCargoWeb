@@ -11,7 +11,7 @@ export function Footer() {
                         <div className="flex items-center gap-2">
                             <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
                                 <img
-                                    src="/brand/LOGO2 CARGO.png"
+                                    src="/brand/LOGO CARGO.png"
                                     alt="Pullman Cargo"
                                     className="h-12 w-auto object-contain"
                                 />
