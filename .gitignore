@@ -42,3 +42,5 @@ next-env.d.ts
 
 # Toml
 contextoProyecto.toml
+# brand guidelines
+colores.toml
