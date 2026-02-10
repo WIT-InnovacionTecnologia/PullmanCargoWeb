@@ -9,10 +9,12 @@ export function Footer() {
                     {/* Company Info */}
                     <div className="lg:col-span-2 space-y-6">
                         <div className="flex items-center gap-2">
-                            <Link href="/" className="flex items-center">
-                                <span className="text-3xl font-extrabold text-white tracking-tight">
-                                    Pullman<span className="text-[#ff5500]">Cargo</span>
-                                </span>
+                            <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
+                                <img
+                                    src="/brand/LOGO2 CARGO.png"
+                                    alt="Pullman Cargo"
+                                    className="h-12 w-auto object-contain"
+                                />
                             </Link>
                         </div>
                         <p className="text-white/80 leading-relaxed max-w-md">

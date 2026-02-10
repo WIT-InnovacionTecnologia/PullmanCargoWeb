@@ -39,9 +39,11 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-            <span className="text-2xl font-extrabold text-[#003fa2] tracking-tight">
-              Pullman<span className="text-[#ff5500]">Cargo</span>
-            </span>
+            <img
+              src="/brand/LOGO CARGO.png"
+              alt="Pullman Cargo"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -83,8 +85,12 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col gap-8 mt-10">
-                  <Link href="/" className="text-2xl font-extrabold text-[#003fa2]">
-                    Pullman<span className="text-[#ff5500]">Cargo</span>
+                  <Link href="/" className="group transition-transform duration-300 hover:scale-105">
+                    <img
+                      src="/brand/LOGO CARGO.png"
+                      alt="Pullman Cargo"
+                      className="h-10 w-auto object-contain"
+                    />
                   </Link>
                   <nav className="flex flex-col gap-6">
                     {navLinks.map((link) => (
