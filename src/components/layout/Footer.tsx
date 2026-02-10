@@ -39,7 +39,7 @@ export function Footer() {
                             <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Instagram className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-[#ff5500] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Linkedin className="w-5 h-5" />
                             </Link>
                         </div>
@@ -86,8 +86,8 @@ export function Footer() {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
                         <p>© {new Date().getFullYear()} Pullman Cargo. Todos los derechos reservados.</p>
                         <div className="flex gap-6">
-                            <Link href="#" className="hover:text-[#ff5500] transition-colors">Política de Privacidad</Link>
-                            <Link href="#" className="hover:text-[#ff5500] transition-colors">Términos de Servicio</Link>
+                            <Link href="#" className="hover:text-white transition-colors">Política de Privacidad</Link>
+                            <Link href="#" className="hover:text-white transition-colors">Términos de Servicio</Link>
                         </div>
                     </div>
                 </div>
