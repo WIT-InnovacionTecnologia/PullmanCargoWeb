@@ -64,7 +64,7 @@ export function ServicesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} animation="zoom-in" duration={600} delay={service.delay} className="h-full">
-                            <Card className="h-full shadow-none hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col border border-gray-100 overflow-hidden group">
+                            <Card className="h-full shadow-none hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col border border-[#003fa2] overflow-hidden group">
                                 <div className="relative h-48 w-full overflow-hidden">
                                     <img
                                         src={service.image}
@@ -88,7 +88,7 @@ export function ServicesSection() {
                                 </CardHeader>
                                 <CardContent className="mt-auto pt-0">
                                     <div className="pt-4 border-t border-gray-50 flex items-start gap-2">
-                                        <ShieldCheck className="h-4 w-4 text-[#ff5500] mt-0.5 flex-shrink-0" />
+                                        <ShieldCheck className="h-4 w-4 text-[#003fa2] mt-0.5 flex-shrink-0" />
                                         <p className="text-xs font-semibold text-secondary italic">
                                             {service.benefit}
                                         </p>

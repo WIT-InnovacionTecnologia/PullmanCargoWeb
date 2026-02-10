@@ -70,14 +70,14 @@
     /* Tono Normado Pullman Cargo */
     --primary-foreground: #ffffff;
 
-    --secondary: #ff5500;
-    /* Pullman Orange Accent */
+    --secondary: #000000;
+    /* Black Accent from Brand Book */
     --secondary-foreground: #ffffff;
 
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
+    --muted: #f8fafc;
+    --muted-foreground: #475569;
 
-    --accent: #00407c;
+    --accent: #003fa2;
     --accent-foreground: #ffffff;
 
     --destructive: #ef4444;

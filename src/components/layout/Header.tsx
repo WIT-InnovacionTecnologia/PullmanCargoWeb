@@ -55,14 +55,14 @@ export function Header() {
                 className="text-gray-600 hover:text-[#003fa2] font-medium transition-colors duration-200 relative group text-sm uppercase tracking-wide"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff5500] group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#003fa2] group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button asChild className="bg-[#ff5500] hover:bg-[#e04b00] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
               <Link href="/#cotizador">
                 Cotizar Ahora
               </Link>
@@ -106,7 +106,7 @@ export function Header() {
                   </nav>
                   <div className="flex flex-col gap-4 mt-4">
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-[#ff5500] hover:bg-[#e04b00] text-white font-bold h-12 text-lg">
+                      <Button asChild className="w-full bg-[#003fa2] hover:bg-[#002d75] text-white font-bold h-12 text-lg">
                         <Link href="#cotizador">Cotizar Ahora</Link>
                       </Button>
                     </SheetClose>

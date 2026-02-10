@@ -128,9 +128,9 @@ export function QuoterSection() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start gap-2 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                                        <TriangleAlert className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                                        <p className="text-sm text-amber-800">
+                                    <div className="flex items-start gap-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                                        <Info className="h-4 w-4 text-[#003fa2] mt-0.5 flex-shrink-0" />
+                                        <p className="text-sm text-blue-800">
                                             <strong>100 cm = 1 metro</strong> — Ingresa medidas correctas para una cotización precisa.
                                         </p>
                                     </div>
@@ -177,30 +177,30 @@ export function QuoterSection() {
                                                     <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodOpacity="0.20"></feDropShadow>
                                                 </filter>
                                             </defs>
-                                            <g filter="url(#shadow)" className="stroke-secondary" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
+                                            <g filter="url(#shadow)" className="stroke-[#003fa2]" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
                                                 <path d="M28 48 L138 48 L158 28 L48 28 Z" fill="#f8fafc"></path>
                                                 <path d="M28 48 L28 120 L138 120 L138 48 Z" fill="#ffffff"></path>
                                                 <path d="M138 48 L158 28 L158 100 L138 120 Z" fill="#e5e7eb"></path>
                                             </g>
                                             <g vectorEffect="non-scaling-stroke">
-                                                <line x1="33" y1="130" x2="133" y2="130" className="stroke-primary" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
+                                                <line x1="33" y1="130" x2="133" y2="130" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
                                                 <g transform="translate(83,144)">
                                                     <rect x="-28" y="-10" width="56" height="18" rx="4" fill="#ffffff"></rect>
                                                     <text x="0" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-primary">Largo</text>
                                                 </g>
                                             </g>
                                             <g vectorEffect="non-scaling-stroke">
-                                                <line x1="18" y1="53" x2="18" y2="115" className="stroke-primary" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
+                                                <line x1="18" y1="53" x2="18" y2="115" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
                                                 <g transform="translate(6,84) rotate(-90)">
                                                     <rect x="-24" y="-10" width="48" height="18" rx="4" fill="#ffffff00"></rect>
-                                                    <text x="3" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-primary">Alto</text>
+                                                    <text x="3" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-[#003fa2]">Alto</text>
                                                 </g>
                                             </g>
                                             <g vectorEffect="non-scaling-stroke">
-                                                <line x1="142" y1="42" x2="165" y2="21" className="stroke-primary" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
+                                                <line x1="142" y1="42" x2="165" y2="21" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
                                                 <g transform="translate(176,32)">
                                                     <rect x="-30" y="-10" width="60" height="18" rx="4" fill="#ffffff00"></rect>
-                                                    <text x="8" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-primary">Ancho</text>
+                                                    <text x="8" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-[#003fa2]">Ancho</text>
                                                 </g>
                                             </g>
                                         </svg>
@@ -235,7 +235,7 @@ export function QuoterSection() {
                                     <div className="text-3xl font-bold text-secondary">${result.toLocaleString('es-CL')}</div>
                                     <p className="text-xs text-gray-400 mt-1">* Tarifa referencial calculada para {activeTab}</p>
                                 </div>
-                                <Button className="bg-secondary hover:bg-secondary/90 text-white">
+                                <Button className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold">
                                     Solicitar Retiro
                                 </Button>
                             </CardContent>

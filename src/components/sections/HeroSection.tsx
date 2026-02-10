@@ -23,17 +23,17 @@ export function HeroSection() {
                     <ScrollReveal animation="slide-in-left" duration={800} className="flex flex-col justify-center space-y-4">
                         <div className="space-y-4">
                             <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl xl:text-7xl/none text-white">
-                                Cotiza tu carga <span className="text-secondary">fácilmente</span>
+                                Cotiza tu carga <span className="text-white">fácilmente</span>
                             </h1>
                             <p className="max-w-[600px] text-blue-50 md:text-2xl leading-relaxed">
                                 Solución integral para el transporte de carga. Obtén tarifas al instante, gestiona tus envíos y realiza el seguimiento en tiempo real.
                             </p>
                         </div>
                         <div className="flex flex-col gap-3 min-[400px]:flex-row pt-4">
-                            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8">
+                            <Button asChild size="lg" className="bg-white text-[#003fa2] hover:bg-gray-100 shadow-xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8">
                                 <Link href="#cotizador">Comenzar cotización</Link>
                             </Button>
-                            <Button asChild size="lg" className="bg-[#ff5500] text-white hover:bg-white hover:text-[#003fa2] transition-all duration-300 font-bold px-8 shadow-lg border-2 border-[#ff5500] hover:border-white">
+                            <Button asChild size="lg" className="bg-transparent text-white hover:bg-white hover:text-[#003fa2] transition-all duration-300 font-bold px-8 shadow-lg border-2 border-white">
                                 <Link href="#servicios">Nuestros Servicios</Link>
                             </Button>
                         </div>
@@ -47,12 +47,12 @@ export function HeroSection() {
                             />
                             {/* Overlay tag */}
                             <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                                <Truck className="h-5 w-5 text-secondary" />
-                                <span className="text-sm font-bold text-primary">Flota Nacional 24/7</span>
+                                <Truck className="h-5 w-5 text-[#003fa2]" />
+                                <span className="text-sm font-bold text-[#003fa2]">Flota Nacional 24/7</span>
                             </div>
 
                             {/* Decorative gradients */}
-                            <div className="absolute -top-12 -right-12 h-40 w-40 bg-secondary/30 rounded-full blur-3xl opacity-50" />
+                            <div className="absolute -top-12 -right-12 h-40 w-40 bg-white/20 rounded-full blur-3xl opacity-50" />
                             <div className="absolute -bottom-12 -left-12 h-40 w-40 bg-white/10 rounded-full blur-3xl opacity-50" />
                         </div>
                     </ScrollReveal>

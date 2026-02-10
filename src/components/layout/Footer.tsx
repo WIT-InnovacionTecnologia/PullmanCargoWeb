@@ -23,20 +23,20 @@ export function Footer() {
                         </p>
                         <div className="space-y-3">
                             <div className="flex items-center gap-3 text-white/80">
-                                <Mail className="w-5 h-5 text-[#ff5500]" />
+                                <Mail className="w-5 h-5 text-[#ffffff]" />
                                 <span>contacto@pullmancargo.cl</span>
                             </div>
                             <div className="flex items-center gap-3 text-white/80">
-                                <MapPin className="w-5 h-5 text-[#ff5500]" />
+                                <MapPin className="w-5 h-5 text-[#ffffff]" />
                                 <span>San Borja 235, Estación Central - Santiago</span>
                             </div>
                         </div>
                         {/* Social Links */}
                         <div className="flex gap-3">
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-[#ff5500] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Facebook className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-[#ff5500] flex items-center justify-center transition-all duration-300 hover:scale-110">
+                            <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white hover:text-[#003fa2] flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <Instagram className="w-5 h-5" />
                             </Link>
                             <Link href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-[#ff5500] flex items-center justify-center transition-all duration-300 hover:scale-110">
@@ -47,34 +47,34 @@ export function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-[#ff5500]">Servicios</h3>
+                        <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Servicios</h3>
                         <ul className="space-y-3">
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ff5500] transition-colors">Transporte de Carga</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ff5500] transition-colors">Logística E-commerce</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ff5500] transition-colors">Distribución Nacional</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ff5500] transition-colors">Carga Internacional</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Transporte de Carga</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Logística E-commerce</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Distribución Nacional</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Carga Internacional</Link></li>
                         </ul>
                     </div>
 
                     {/* Company */}
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-[#ff5500]">Empresa</h3>
+                        <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Empresa</h3>
                         <ul className="space-y-3">
-                            <li><Link href="#nosotros" className="text-white/80 hover:text-[#ff5500] transition-colors">Sobre Nosotros</Link></li>
-                            <li><Link href="#flota" className="text-white/80 hover:text-[#ff5500] transition-colors">Nuestra Flota</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ff5500] transition-colors">Certificaciones</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ff5500] transition-colors">Trabaja con Nosotros</Link></li>
+                            <li><Link href="#nosotros" className="text-white/80 hover:text-[#ffffff] transition-colors">Sobre Nosotros</Link></li>
+                            <li><Link href="#flota" className="text-white/80 hover:text-[#ffffff] transition-colors">Nuestra Flota</Link></li>
+                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Certificaciones</Link></li>
+                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Trabaja con Nosotros</Link></li>
                         </ul>
                     </div>
 
                     {/* Support */}
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-[#ff5500]">Soporte</h3>
+                        <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Soporte</h3>
                         <ul className="space-y-3">
-                            <li><Link href="#" className="text-white/80 hover:text-[#ff5500] transition-colors">Centro de Ayuda</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ff5500] transition-colors">Términos y Condiciones</Link></li>
-                            <li><Link href="#" className="text-white/80 hover:text-[#ff5500] transition-colors">Política de Privacidad</Link></li>
-                            <li><Link href="#faq" className="text-white/80 hover:text-[#ff5500] transition-colors">Preguntas Frecuentes</Link></li>
+                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Centro de Ayuda</Link></li>
+                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Términos y Condiciones</Link></li>
+                            <li><Link href="#" className="text-white/80 hover:text-[#ffffff] transition-colors">Política de Privacidad</Link></li>
+                            <li><Link href="#faq" className="text-white/80 hover:text-[#ffffff] transition-colors">Preguntas Frecuentes</Link></li>
                         </ul>
                     </div>
                 </div>
