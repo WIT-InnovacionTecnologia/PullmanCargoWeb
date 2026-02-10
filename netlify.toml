@@ -1,5 +1,4 @@
 [build]
-  base = "pullman-cargo-web"
   command = "npm run build"
   publish = ".next"
 
