@@ -1,31 +1,31 @@
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { Shield, Clock, Award, Headphones } from "lucide-react"
+import { ShieldCheck, Zap, History, Headset } from "lucide-react"
 
 export function WhyChooseUs() {
     const benefits = [
         {
+            icon: <ShieldCheck className="w-8 h-8 text-white" />,
             title: "Seguridad Garantizada",
-            description: "Protocolos estrictos de manejo de carga y seguros comprometidos para tu tranquilidad.",
-            icon: <Shield className="h-12 w-12 text-white" />,
+            description: "Protocolos de seguridad de nivel bancario para el manejo de tu carga.",
+            delay: 0
+        },
+        {
+            icon: <Zap className="w-8 h-8 text-white" />,
+            title: "Rapidez y Eficiencia",
+            description: "Rutas optimizadas para asegurar la entrega en el menor tiempo posible.",
             delay: 100
         },
         {
-            title: "Rapidez y Eficiencia",
-            description: "Nuestra red logística está diseñada para minimizar tiempos de tránsito en cada ruta.",
-            icon: <Clock className="h-12 w-12 text-white" />,
+            icon: <History className="w-8 h-8 text-white" />,
+            title: "Trayectoria de Confianza",
+            description: "Más de 75 años liderando el transporte terrestre en Chile.",
             delay: 200
         },
         {
-            title: "Trayectoria de Confianza",
-            description: "Más de 75 años liderando el transporte terrestre en Chile con excelencia operativa.",
-            icon: <Award className="h-12 w-12 text-white" />,
-            delay: 300
-        },
-        {
+            icon: <Headset className="w-8 h-8 text-white" />,
             title: "Soporte Especializado",
-            description: "Atención personalizada para resolver tus dudas y gestionar tus envíos 24/7.",
-            icon: <Headphones className="h-12 w-12 text-white" />,
-            delay: 400
+            description: "Atención personalizada para resolver todas tus dudas logísticas.",
+            delay: 300
         }
     ]
 
