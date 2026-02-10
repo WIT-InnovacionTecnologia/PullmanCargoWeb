@@ -34,29 +34,29 @@ export function WhyChooseUs() {
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     <ScrollReveal animation="slide-in-left" className="lg:w-1/3 space-y-6">
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight text-white">
                             ¿Por qué elegir <br />
-                            <span className="text-[#003fa2]">Pullman Cargo</span>?
+                            <span>Pullman Cargo</span>?
                         </h2>
                         <p className="text-white/80 text-lg">
                             No solo transportamos carga; movemos el motor de tu negocio con
-                            un compromiso inquebrantable hacia la calidad y la puntualidad.
+                            excelencia, seguridad y el respaldo de la flota más moderna de Chile.
                         </p>
                     </ScrollReveal>
 
-                    <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="lg:w-2/3 grid sm:grid-cols-2 gap-4">
                         {benefits.map((benefit, index) => (
                             <ScrollReveal
                                 key={index}
                                 animation="fade-in"
                                 delay={benefit.delay}
-                                className="flex gap-4 p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-[#003fa2]"
+                                className="flex gap-4 p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10"
                             >
                                 <div className="flex-shrink-0">
                                     {benefit.icon}
                                 </div>
                                 <div className="space-y-2">
-                                    <h3 className="text-xl font-bold text-[#003fa2]">{benefit.title}</h3>
+                                    <h3 className="text-xl font-bold text-white">{benefit.title}</h3>
                                     <p className="text-sm text-white/70 leading-relaxed">
                                         {benefit.description}
                                     </p>
