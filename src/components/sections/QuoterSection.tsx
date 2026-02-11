@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { Package, Truck, Users, Globe, Info, Ruler, TriangleAlert } from "lucide-react"
+import { Package, Truck, Users, Globe, Info, Ruler, TriangleAlert, MapPin, Box, Scale, DollarSign, Zap, CheckCircle2 } from "lucide-react"
 
 export function QuoterSection() {
     const [result, setResult] = useState<number | null>(null)
@@ -26,228 +26,136 @@ export function QuoterSection() {
     }
 
     return (
-        <section id="cotizador" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="cotizador" className="w-full py-24 bg-white border-t border-gray-100">
             <div className="container px-4 md:px-6 mx-auto">
-                <div className="max-w-6xl mx-auto">
+                <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
+                        Cotiza tu <span className="text-[#003fa2]">Envío</span>
+                    </h2>
+                    <p className="text-gray-500 text-lg">
+                        Obtén una estimación inmediata para tus necesidades de transporte.
+                    </p>
+                </ScrollReveal>
 
-                    <div className="grid lg:grid-cols-2 gap-8">
-                        {/* LEFT COLUMN: FORM */}
-                        <ScrollReveal animation="slide-in-left" className="h-full">
-                            <Card className="shadow-2xl border-0 rounded-3xl overflow-hidden flex flex-col h-full ring-1 ring-gray-100">
-                                <div className="bg-[#003fa2] p-6 text-white">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="p-2 bg-white/10 rounded-xl backdrop-blur-sm">
-                                            <Package className="h-6 w-6 text-white" />
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                    {/* LEFT COLUMN: FORM */}
+                    <ScrollReveal animation="slide-in-left" className="h-full">
+                        <div className="bg-white border-2 border-gray-100 p-8 shadow-2xl relative">
+                            <div className="absolute top-0 left-0 w-full h-2 bg-[#003fa2]" />
+
+                            <div className="mb-8">
+                                <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Calculadora de Tarifas</h3>
+                                <p className="text-sm text-gray-400 font-medium">Completa los datos para cotizar.</p>
+                            </div>
+
+                            <Tabs defaultValue="personas" className="w-full mb-8" onValueChange={setActiveTab}>
+                                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gray-100 p-1 gap-1 rounded-none h-auto">
+                                    {["Personas", "Emprendedores", "Empresas", "Internacional"].map((tab) => (
+                                        <TabsTrigger
+                                            key={tab}
+                                            value={tab.toLowerCase()}
+                                            className="rounded-none text-xs font-bold uppercase py-3 data-[state=active]:bg-[#003fa2] data-[state=active]:text-white data-[state=active]:shadow-none transition-all"
+                                        >
+                                            {tab}
+                                        </TabsTrigger>
+                                    ))}
+                                </TabsList>
+                            </Tabs>
+
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="origin" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
+                                        <div className="relative">
+                                            <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                            <Input id="origin" placeholder="Ciudad de origen" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
                                         </div>
-                                        <h3 className="text-2xl font-bold">Cotiza tu envío</h3>
                                     </div>
-                                    <p className="text-blue-100 text-sm opacity-90 pl-1">
-                                        Calcula el costo de tu envío en segundos.
-                                    </p>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="destination" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
+                                        <div className="relative">
+                                            <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                            <Input id="destination" placeholder="Ciudad de destino" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <CardContent className="space-y-6 flex-1 p-6 md:p-8 bg-white">
-                                    <Tabs defaultValue="personas" className="w-full mb-6" onValueChange={setActiveTab}>
-                                        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-1.5 bg-gray-100/80 rounded-xl gap-1.5">
-                                            {["Personas", "Emprendedores", "Empresas", "Internacional"].map((tab) => (
-                                                <TabsTrigger
-                                                    key={tab}
-                                                    value={tab.toLowerCase()}
-                                                    className="data-[state=active]:bg-white data-[state=active]:text-[#003fa2] data-[state=active]:shadow-md text-gray-500 hover:text-gray-900 transition-all py-2.5 font-semibold text-sm rounded-lg"
-                                                >
-                                                    {tab}
-                                                </TabsTrigger>
-                                            ))}
-                                        </TabsList>
-                                    </Tabs>
 
-                                    <form onSubmit={handleQuote} className="space-y-5">
-                                        <div className="grid md:grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <Label htmlFor="origin" className="text-sm font-medium text-gray-700">Origen</Label>
-                                                <Select>
-                                                    <SelectTrigger id="origin" className="bg-white border-gray-300 focus:ring-primary focus:border-primary">
-                                                        <SelectValue placeholder="Seleccione origen" />
-                                                    </SelectTrigger>
-                                                    <SelectContent>
-                                                        <SelectItem value="santiago">Santiago</SelectItem>
-                                                        <SelectItem value="valparaiso">Valparaíso</SelectItem>
-                                                        <SelectItem value="concepcion">Concepción</SelectItem>
-                                                    </SelectContent>
-                                                </Select>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label htmlFor="destination" className="text-sm font-medium text-gray-700">Destino</Label>
-                                                <Select>
-                                                    <SelectTrigger id="destination" className="bg-white border-gray-300 focus:ring-primary focus:border-primary">
-                                                        <SelectValue placeholder="Seleccione destino" />
-                                                    </SelectTrigger>
-                                                    <SelectContent>
-                                                        <SelectItem value="antofagasta">Antofagasta</SelectItem>
-                                                        <SelectItem value="puertomontt">Puerto Montt</SelectItem>
-                                                        <SelectItem value="arica">Arica</SelectItem>
-                                                    </SelectContent>
-                                                </Select>
-                                            </div>
+                                <div className="space-y-2">
+                                    <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones del paquete</Label>
+                                    <div className="grid grid-cols-3 gap-2">
+                                        <div className="relative">
+                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
+                                            <Input placeholder="Largo (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
                                         </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <div className="space-y-2">
-                                                <Label htmlFor="largo" className="text-sm font-medium text-gray-700">Largo</Label>
-                                                <div className="relative">
-                                                    <Input id="largo" type="number" placeholder="0" className="pr-8 border-gray-300 focus-visible:ring-primary" />
-                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 bg-gray-100 px-1 rounded">cm</span>
-                                                </div>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label htmlFor="ancho" className="text-sm font-medium text-gray-700">Ancho</Label>
-                                                <div className="relative">
-                                                    <Input id="ancho" type="number" placeholder="0" className="pr-8 border-gray-300 focus-visible:ring-primary" />
-                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 bg-gray-100 px-1 rounded">cm</span>
-                                                </div>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label htmlFor="alto" className="text-sm font-medium text-gray-700">Alto</Label>
-                                                <div className="relative">
-                                                    <Input id="alto" type="number" placeholder="0" className="pr-8 border-gray-300 focus-visible:ring-primary" />
-                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 bg-gray-100 px-1 rounded">cm</span>
-                                                </div>
-                                            </div>
+                                        <div className="relative">
+                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
+                                            <Input placeholder="Ancho (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
                                         </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <Label htmlFor="peso" className="text-sm font-medium text-gray-700">Peso</Label>
-                                                <div className="relative">
-                                                    <Input id="peso" type="number" placeholder="0" className="pr-8 border-gray-300 focus-visible:ring-primary" />
-                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 bg-gray-100 px-1 rounded">kg</span>
-                                                </div>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <Label htmlFor="valor" className="text-sm font-medium text-gray-700">Valor declarado</Label>
-                                                <div className="relative">
-                                                    <Input id="valor" type="number" placeholder="0" className="pr-8 border-gray-300 focus-visible:ring-primary" />
-                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500 bg-gray-100 px-1 rounded">$</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-start gap-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                                            <Info className="h-4 w-4 text-[#003fa2] mt-0.5 flex-shrink-0" />
-                                            <p className="text-sm text-blue-800">
-                                                <strong>100 cm = 1 metro</strong> — Ingresa medidas correctas para una cotización precisa.
-                                            </p>
-                                        </div>
-
-                                        <div className="flex justify-end pt-4">
-                                            <Button type="submit" className="w-full md:w-auto px-12 bg-primary hover:bg-primary/90 text-white font-bold shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300" disabled={loading}>
-                                                {loading ? "Calculando..." : "Cotizar"}
-                                            </Button>
-                                        </div>
-                                    </form>
-                                </CardContent>
-                            </Card>
-                        </ScrollReveal>
-
-                        {/* RIGHT COLUMN: DIMENSIONS & TIPS */}
-                        <ScrollReveal animation="slide-in-right" className="h-full">
-                            <Card className="shadow-none hover:shadow-xl transition-shadow duration-300 border border-primary bg-gradient-to-br from-gray-50 to-white flex flex-col h-full">
-                                <CardHeader className="pb-4">
-                                    <div className="text-2xl font-bold text-secondary flex items-center gap-2">
-                                        <Ruler className="h-6 w-6 text-primary" />
-                                        Dimensiones de tu envío
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="space-y-6 flex-1">
-                                    <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                                        <Info className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                                        <div>
-                                            <p className="text-sm text-secondary font-medium mb-1">¿Cómo medir correctamente?</p>
-                                            <p className="text-sm text-gray-700">
-                                                El precio del envío dependerá de las medidas, el peso y el valor declarado ingresado, los cuales serán validados al momento de la recepción.
-                                            </p>
+                                        <div className="relative">
+                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
+                                            <Input placeholder="Alto (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
                                         </div>
                                     </div>
-
-                                    {/* SVG ILLUSTRATION FROM REFERENCE */}
-                                    <div className="bg-white p-4 md:p-8 rounded-xl border border-primary/30 shadow-sm flex items-center justify-center">
-                                        <div className="relative w-64 h-44 sm:w-80 sm:h-52 md:w-[22rem] md:h-55">
-                                            <svg viewBox="-10 0 205 160" className="w-full h-full" role="img" aria-labelledby="box3dTitle box3dDesc">
-                                                <title id="box3dTitle">Dimensiones de una caja</title>
-                                                <desc id="box3dDesc">Ilustración isométrica de una caja.</desc>
-                                                <defs>
-                                                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-                                                        <polygon points="0 0, 8 4, 0 8" className="fill-primary text-primary"></polygon>
-                                                    </marker>
-                                                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                                                        <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodOpacity="0.20"></feDropShadow>
-                                                    </filter>
-                                                </defs>
-                                                <g filter="url(#shadow)" className="stroke-[#003fa2]" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
-                                                    <path d="M28 48 L138 48 L158 28 L48 28 Z" fill="#f8fafc"></path>
-                                                    <path d="M28 48 L28 120 L138 120 L138 48 Z" fill="#ffffff"></path>
-                                                    <path d="M138 48 L158 28 L158 100 L138 120 Z" fill="#e5e7eb"></path>
-                                                </g>
-                                                <g vectorEffect="non-scaling-stroke">
-                                                    <line x1="33" y1="130" x2="133" y2="130" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
-                                                    <g transform="translate(83,144)">
-                                                        <rect x="-28" y="-10" width="56" height="18" rx="4" fill="#ffffff"></rect>
-                                                        <text x="0" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-primary">Largo</text>
-                                                    </g>
-                                                </g>
-                                                <g vectorEffect="non-scaling-stroke">
-                                                    <line x1="18" y1="53" x2="18" y2="115" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
-                                                    <g transform="translate(6,84) rotate(-90)">
-                                                        <rect x="-24" y="-10" width="48" height="18" rx="4" fill="#ffffff00"></rect>
-                                                        <text x="3" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-[#003fa2]">Alto</text>
-                                                    </g>
-                                                </g>
-                                                <g vectorEffect="non-scaling-stroke">
-                                                    <line x1="142" y1="42" x2="165" y2="21" className="stroke-[#003fa2]" strokeWidth="2.25" markerStart="url(#arrow)" markerEnd="url(#arrow)"></line>
-                                                    <g transform="translate(176,32)">
-                                                        <rect x="-30" y="-10" width="60" height="18" rx="4" fill="#ffffff00"></rect>
-                                                        <text x="8" y="3" textAnchor="middle" fontSize="11" fontWeight="500" className="fill-[#003fa2]">Ancho</text>
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-3">
-                                        <h4 className="font-semibold text-gray-800">Consejos para una cotización exacta:</h4>
-                                        <ul className="space-y-2 text-sm text-gray-600">
-                                            {[
-                                                "Mide el paquete ya embalado y listo para enviar",
-                                                "Incluye cualquier protección adicional en las medidas",
-                                                "El valor declarado debe corresponder al contenido real",
-                                                "Redondea hacia arriba si tienes dudas en las medidas"
-                                            ].map((tip, i) => (
-                                                <li key={i} className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                                                    <span>{tip}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </ScrollReveal>
-                    </div>
-
-                    {result !== null && (
-                        <Card className="mt-8 shadow-none hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary animate-in fade-in slide-in-from-bottom">
-                            <CardContent className="p-6 flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm font-medium text-gray-500">Costo Estimado</p>
-                                    <div className="text-3xl font-bold text-secondary">${result.toLocaleString('es-CL')}</div>
-                                    <p className="text-xs text-gray-400 mt-1">* Tarifa referencial calculada para {activeTab}</p>
                                 </div>
-                                <Button className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold">
-                                    Solicitar Retiro
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="weight" className="text-sm font-bold uppercase text-gray-500">Peso (Kg)</Label>
+                                        <div className="relative">
+                                            <Scale className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                            <Input id="weight" placeholder="0.0" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="value" className="text-sm font-bold uppercase text-gray-500">Valor Declarado</Label>
+                                        <div className="relative">
+                                            <DollarSign className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                            <Input id="value" placeholder="10000" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4">
+                                    Cotizar Ahora
                                 </Button>
-                            </CardContent>
-                        </Card>
-                    )}
+                            </form>
+                        </div>
+                    </ScrollReveal>
 
+                    {/* RIGHT COLUMN: RESULT/INFO */}
+                    <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
+                        <div className="relative">
+                            <div className="absolute -left-8 top-0 w-1 h-20 bg-[#003fa2]" />
+                            <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
+                                ¿Por qué cotizar con <br /> <span className="text-[#003fa2]">Pullman Cargo?</span>
+                            </h3>
+                            <p className="text-gray-500 text-lg leading-relaxed">
+                                Garantizamos la mejor relación precio-calidad del mercado, con tiempos de respuesta récord y seguridad total en cada kilómetro.
+                            </p>
+                        </div>
+
+                        <div className="bg-gray-900 text-white p-8 rounded-none relative overflow-hidden">
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="p-3 bg-[#003fa2] rounded-none">
+                                        <Zap className="h-6 w-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-bold text-gray-400 uppercase">Tiempo Estimado</p>
+                                        <p className="text-2xl font-black">24 - 48 Horas</p>
+                                    </div>
+                                </div>
+                                <div className="w-full bg-white/10 h-px mb-6" />
+                                <ul className="space-y-3">
+                                    {["Cobertura Nacional", "Seguimiento GPS", "Seguro de Carga Incluido"].map((item, i) => (
+                                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
+                                            <CheckCircle2 className="h-4 w-4 text-[#003fa2]" /> {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </div>
         </section>

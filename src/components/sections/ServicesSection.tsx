@@ -15,89 +15,82 @@ export function ServicesSection() {
     const services = [
         {
             title: "Encargos Exprés",
-            description: "Envío rápido de documentos y paquetes pequeños con entrega en menos de 24 horas a las principales ciudades.",
-            benefit: "Mejora los tiempos de respuesta de tu negocio con logística ágil.",
-            icon: <Zap className="h-6 w-6 text-white" />,
-            image: "https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=800",
+            description: "Envío rápido de documentos y paquetes con entrega prioritaria.",
+            benefit: "Mejora los tiempos de respuesta.",
+            icon: <Zap className="h-8 w-8 text-current" />,
             delay: 100
         },
         {
-            title: "Carga Consolidada (LTL)",
-            description: "Transporte eficiente para medianas cargas compartiendo espacio en camión, reduciendo costos operativos.",
-            benefit: "Optimiza tu presupuesto pagando solo por el espacio que utilizas.",
-            icon: <Truck className="h-6 w-6 text-white" />,
-            image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800",
+            title: "Carga LTL",
+            description: "Transporte eficiente consolidado para optimizar costos.",
+            benefit: "Paga solo por el espacio que usas.",
+            icon: <Truck className="h-8 w-8 text-current" />,
             delay: 200
         },
         {
-            title: "Logística E-commerce",
-            description: "Soluciones de última milla integradas para tiendas online con reportes de entrega en tiempo real.",
-            benefit: "Aumenta la satisfacción de tus clientes con entregas puntuales y seguras.",
-            icon: <Package className="h-6 w-6 text-white" />,
-            image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800",
+            title: "E-commerce",
+            description: "Logística de última milla para tu tienda online.",
+            benefit: "Entregas puntuales y seguras.",
+            icon: <Package className="h-8 w-8 text-current" />,
             delay: 300
         },
         {
-            title: "Carga Internacional",
-            description: "Gestión aduanera y transporte multimodal para importaciones y exportaciones a todo el mundo.",
-            benefit: "Expande tus fronteras con el respaldo de nuestra red de agentes globales.",
-            icon: <Globe className="h-6 w-6 text-white" />,
-            image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=800",
+            title: "Internacional",
+            description: "Gestión aduanera y transporte sin fronteras.",
+            benefit: "Conectamos tu negocio con el mundo.",
+            icon: <Globe className="h-8 w-8 text-current" />,
             delay: 400
         }
     ]
 
     return (
-        <section id="servicios" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="servicios" className="w-full py-24 bg-gray-50">
             <div className="container px-4 md:px-6 mx-auto">
-                <ScrollReveal animation="slide-in-left" className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                    <div className="space-y-4">
-                        <h2 className="text-3xl font-bold tracking-tighter md:text-5xl text-primary">
-                            Nuestros Servicios Logísticos
-                        </h2>
-                        <p className="max-w-[800px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mx-auto">
-                            Soluciones integrales diseñadas para optimizar tu cadena de suministro,
-                            mejorar la eficiencia y garantizar la seguridad de tu carga.
-                        </p>
+                <ScrollReveal animation="fade-in" className="text-center mb-16 space-y-4">
+                    <div className="inline-block bg-black px-4 py-1 text-xs font-bold text-white uppercase tracking-widest mb-4">
+                        Nuestros Servicios
                     </div>
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#003fa2] uppercase">
+                        Soluciones <span className="text-black">Logísticas</span>
+                    </h2>
+                    <div className="w-24 h-1.5 bg-[#003fa2] mx-auto mt-6" />
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <ScrollReveal key={index} animation="slide-in-right" delay={service.delay} className="h-full">
-                            <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden group bg-white rounded-2xl hover:-translate-y-2">
-                                <div className="relative h-56 w-full overflow-hidden">
-                                    <Image
-                                        src={service.image}
-                                        alt={service.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#003fa2]/90 via-[#003fa2]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
-                                    <div className="absolute bottom-4 left-4 text-white z-10">
-                                        <div className="bg-white/20 backdrop-blur-md p-2 rounded-xl inline-flex mb-2">
+                        <ScrollReveal key={index} animation="slide-in-bottom" delay={service.delay} className="h-full">
+                            <div className="group relative h-full bg-white p-8 shadow-lg hover:bg-[#003fa2] transition-colors duration-500 overflow-hidden">
+                                {/* Decorative Number */}
+                                <div className="absolute top-4 right-4 text-4xl font-black text-gray-100 group-hover:text-white/10 transition-colors">
+                                    0{index + 1}
+                                </div>
+
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className="mb-6 inline-flex p-4 bg-gray-50 group-hover:bg-white/10 rounded-none transition-colors">
+                                        {/* Icon wrapper to handle color change via CSS classes is tricky with React Node, 
+                                            but we can use text-color utility on parent 'group' */}
+                                        <div className="text-[#003fa2] group-hover:text-white transition-colors">
                                             {service.icon}
                                         </div>
                                     </div>
-                                </div>
-                                <CardHeader className="pb-2">
-                                    <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-[#003fa2] transition-colors">
+
+                                    <h3 className="text-xl font-black uppercase text-black group-hover:text-white mb-4 transition-colors">
                                         {service.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-1 flex flex-col">
-                                    <CardDescription className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
+                                    </h3>
+
+                                    <p className="text-gray-500 group-hover:text-blue-100 mb-6 flex-1 transition-colors leading-relaxed">
                                         {service.description}
-                                    </CardDescription>
-                                    <div className="pt-4 border-t border-gray-100 flex items-start gap-2 mt-auto">
-                                        <ShieldCheck className="h-4 w-4 text-[#003fa2] mt-0.5 flex-shrink-0" />
-                                        <p className="text-xs font-semibold text-[#003fa2]/80">
-                                            {service.benefit}
-                                        </p>
+                                    </p>
+
+                                    <div className="flex items-center text-sm font-bold uppercase tracking-wider text-[#003fa2] group-hover:text-white mt-auto">
+                                        <div className="w-8 h-0.5 bg-[#003fa2] group-hover:bg-white mr-3 transition-colors" />
+                                        Leer Más
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </div>
+
+                                {/* Bottom Bar */}
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#003fa2] group-hover:bg-white transition-colors" />
+                            </div>
                         </ScrollReveal>
                     ))}
                 </div>

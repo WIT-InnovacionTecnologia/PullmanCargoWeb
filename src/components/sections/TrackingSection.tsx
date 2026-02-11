@@ -5,42 +5,61 @@ import { Search, Info } from "lucide-react"
 
 export function TrackingSection() {
     return (
-        <section id="tracking" className="w-full py-16 bg-primary text-primary-foreground border-t border-white/10">
-            <div className="container px-4 md:px-6 mx-auto">
+        <section id="tracking" className="relative w-full py-32 overflow-hidden">
+            {/* Parallax Background */}
+            <div
+                className="absolute inset-0 bg-fixed bg-cover bg-center z-0"
+                style={{
+                    backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200')"
+                }}
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-[#003fa2]/80 mix-blend-multiply z-0" />
+            <div className="absolute inset-0 bg-black/40 z-0" />
+
+            <div className="container relative z-10 px-4 md:px-6 mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <ScrollReveal animation="slide-in-left" className="space-y-6">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider">
-                            <Info className="w-3 h-3" /> Próximamente
+                    <ScrollReveal animation="slide-in-left" className="space-y-8">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#003fa2] text-sm font-bold uppercase tracking-wider transform -skew-x-12">
+                            <span className="skew-x-12 flex items-center gap-2">
+                                <Info className="w-4 h-4" /> Tracking en Tiempo Real
+                            </span>
                         </div>
-                        <h2 className="text-4xl font-extrabold tracking-tighter md:text-5xl text-white">
-                            Control total de <br /> tus envíos
+                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase italic leading-[0.9]">
+                            Control <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Total</span>
                         </h2>
-                        <p className="max-w-[500px] text-white/80 text-lg leading-relaxed">
-                            Nuestra plataforma de tracking te permitirá monitorear la ubicación exacta
-                            de tu carga en tiempo real, brindándote la tranquilidad y el control
-                            que tu operación logística requiere.
+                        <p className="max-w-[500px] text-white/90 text-xl font-medium leading-relaxed border-l-4 border-white pl-6">
+                            Monitorea la ubicación exacta de tu carga 24/7. Tecnología GPS integrada en toda nuestra flota.
                         </p>
                     </ScrollReveal>
 
-                    <ScrollReveal animation="slide-in-right" className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                        <div className="space-y-6 text-center lg:text-left">
-                            <h3 className="text-xl font-bold text-white">Rastreador de Guía</h3>
-                            <p className="text-sm text-white/70">
-                                Ingresa el número de guía que aparece en tu comprobante de envío.
-                            </p>
-                            <form className="flex flex-col sm:flex-row gap-3">
-                                <Input
-                                    className="h-12 bg-white text-black border-0 focus-visible:ring-white"
-                                    placeholder="Ej: 123456789"
-                                    type="text"
-                                />
-                                <Button className="h-12 bg-white hover:bg-gray-100 text-[#003fa2] font-bold px-8 shadow-lg shadow-black/20">
-                                    <Search className="w-4 h-4 mr-2" /> Buscar
-                                </Button>
-                            </form>
-                            <p className="text-xs text-white/50 italic">
-                                * Funcionalidad en fase de integración API.
-                            </p>
+                    <ScrollReveal animation="slide-in-right">
+                        <div className="bg-white p-8 md:p-10 shadow-2xl relative overflow-hidden group">
+                            <div className="absolute top-0 left-0 w-2 h-full bg-[#003fa2]" />
+                            <div className="space-y-8 relative z-10">
+                                <div>
+                                    <h3 className="text-3xl font-black text-[#003fa2] uppercase mb-2">Rastrea tu envío</h3>
+                                    <p className="text-gray-500 font-medium">
+                                        Ingresa tu número de orden o guía de despacho.
+                                    </p>
+                                </div>
+                                <form className="space-y-4">
+                                    <div className="relative">
+                                        <Input
+                                            className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-[#003fa2] rounded-none px-4 text-lg font-bold placeholder:font-normal transition-all"
+                                            placeholder="Ej: 123456789"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black text-lg uppercase tracking-widest transition-all duration-300 rounded-none shadow-xl hover:shadow-2xl">
+                                        <Search className="w-5 h-5 mr-3" /> Buscar Ahora
+                                    </Button>
+                                </form>
+                                <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide text-center">
+                                    * Sistema conectado a API de Pullman Cargo
+                                </p>
+                            </div>
                         </div>
                     </ScrollReveal>
                 </div>
