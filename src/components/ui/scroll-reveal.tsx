@@ -69,7 +69,6 @@ export function ScrollReveal({
         <div
             ref={ref}
             className={cn(
-                "transition-all",
                 isVisible ? getAnimationClass() : "opacity-0",
                 className
             )}

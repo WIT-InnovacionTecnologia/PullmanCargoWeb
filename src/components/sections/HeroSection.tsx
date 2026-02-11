@@ -22,7 +22,7 @@ export function HeroSection() {
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2 items-center">
                     <ScrollReveal animation="slide-in-left" duration={800} className="flex flex-col justify-center space-y-4">
                         <div className="space-y-4">
-                            <h1 className="text-3xl font-extrabold tracking-tighter sm:text-5xl xl:text-7xl/none text-white">
+                            <h1 className="text-2xl min-[400px]:text-3xl font-extrabold tracking-tighter sm:text-5xl xl:text-7xl/none text-white break-words hyphens-auto">
                                 Cotiza tu carga <span className="text-white">fácilmente</span>
                             </h1>
                             <p className="max-w-[600px] text-blue-50 md:text-2xl leading-relaxed">
