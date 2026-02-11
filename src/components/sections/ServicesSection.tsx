@@ -49,7 +49,7 @@ export function ServicesSection() {
     return (
         <section id="servicios" className="w-full py-12 md:py-24 lg:py-32 bg-background">
             <div className="container px-4 md:px-6 mx-auto">
-                <ScrollReveal animation="fade-in" duration={800} className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <ScrollReveal animation="slide-in-bottom" duration={800} className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold tracking-tighter md:text-5xl text-primary">
                             Nuestros Servicios Logísticos
@@ -63,7 +63,7 @@ export function ServicesSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <ScrollReveal key={index} animation="zoom-in" duration={600} delay={service.delay} className="h-full">
+                        <ScrollReveal key={index} animation="slide-in-bottom" duration={600} delay={service.delay} className="h-full">
                             <Card className="h-full shadow-none hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col border border-[#003fa2] overflow-hidden group">
                                 <div className="relative h-48 w-full overflow-hidden">
                                     <img

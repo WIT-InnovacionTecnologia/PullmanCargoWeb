@@ -17,7 +17,7 @@ export function ScrollReveal({
     className,
     animation = "fade-in",
     delay = 0,
-    duration = 700,
+    duration = 1000,
     threshold = 0.1,
 }: ScrollRevealProps) {
     const ref = useRef<HTMLDivElement>(null)
@@ -53,11 +53,11 @@ export function ScrollReveal({
             case "fade-in":
                 return "animate-in fade-in"
             case "slide-in-bottom":
-                return "animate-in fade-in slide-in-from-bottom-8"
+                return "animate-in fade-in slide-in-from-bottom-4"
             case "slide-in-left":
-                return "animate-in fade-in slide-in-from-left-8"
+                return "animate-in fade-in slide-in-from-left-4"
             case "slide-in-right":
-                return "animate-in fade-in slide-in-from-right-8"
+                return "animate-in fade-in slide-in-from-right-4"
             case "zoom-in":
                 return "animate-in fade-in zoom-in-95"
             default:
