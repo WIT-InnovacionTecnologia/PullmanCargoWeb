@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
@@ -12,13 +11,10 @@ export function Footer() {
                     <div className="lg:col-span-2 space-y-6">
                         <div className="flex items-center gap-2">
                             <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-                                <Image
+                                <img
                                     src="/brand/LOGO CARGO.png"
                                     alt="Pullman Cargo"
-                                    width={200}
-                                    height={48}
                                     className="h-12 w-auto object-contain"
-                                    style={{ width: "auto" }}
                                 />
                             </Link>
                         </div>

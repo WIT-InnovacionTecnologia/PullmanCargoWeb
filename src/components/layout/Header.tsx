@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -40,14 +39,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-            <Image
+            <img
               src="/brand/LOGO2 CARGO.png"
               alt="Pullman Cargo"
-              width={200}
-              height={40}
               className="h-8 md:h-10 w-auto object-contain"
-              style={{ width: "auto" }}
-              priority
             />
           </Link>
 
@@ -91,14 +86,10 @@ export function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col gap-8 mt-10">
                   <Link href="/" className="group transition-transform duration-300 hover:scale-105">
-                    <Image
+                    <img
                       src="/brand/LOGO2 CARGO.png"
                       alt="Pullman Cargo"
-                      width={200}
-                      height={40}
                       className="h-10 w-auto object-contain"
-                      style={{ width: "auto" }}
-                      priority
                     />
                   </Link>
                   <nav className="flex flex-col gap-6">
