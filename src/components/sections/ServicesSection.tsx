@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { ShieldCheck, Zap, Globe, Truck, Package, Clock } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import Image from "next/image"
 
 export function ServicesSection() {
     const services = [
@@ -49,7 +50,7 @@ export function ServicesSection() {
     return (
         <section id="servicios" className="w-full py-12 md:py-24 lg:py-32 bg-background">
             <div className="container px-4 md:px-6 mx-auto">
-                <ScrollReveal animation="slide-in-bottom" duration={800} className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <ScrollReveal animation="slide-in-left" className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold tracking-tighter md:text-5xl text-primary">
                             Nuestros Servicios Logísticos
@@ -63,18 +64,17 @@ export function ServicesSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <ScrollReveal key={index} animation="slide-in-bottom" duration={600} delay={service.delay} className="h-full">
+                        <ScrollReveal key={index} animation="slide-in-right" delay={service.delay} className="h-full">
                             <Card className="h-full shadow-none hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col border border-[#003fa2] overflow-hidden group">
                                 <div className="relative h-48 w-full overflow-hidden">
-                                    <img
+                                    <Image
                                         src={service.image}
                                         alt={service.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800";
-                                        }}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 z-10">
                                         <div className="bg-white/90 p-2 rounded-lg backdrop-blur-sm">
                                             {service.icon}
                                         </div>

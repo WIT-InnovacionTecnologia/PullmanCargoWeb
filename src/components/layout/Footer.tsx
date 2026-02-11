@@ -1,18 +1,22 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Footer() {
     return (
         <footer id="contacto" className="bg-[#003fa2] text-white">
             <div className="container mx-auto px-4 py-16">
-                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <ScrollReveal animation="slide-in-bottom" className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
                     {/* Company Info */}
                     <div className="lg:col-span-2 space-y-6">
                         <div className="flex items-center gap-2">
                             <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-                                <img
+                                <Image
                                     src="/brand/LOGO CARGO.png"
                                     alt="Pullman Cargo"
+                                    width={200}
+                                    height={48}
                                     className="h-12 w-auto object-contain"
                                 />
                             </Link>
@@ -77,19 +81,19 @@ export function Footer() {
                             <li><Link href="#faq" className="text-white/80 hover:text-[#ffffff] transition-colors">Preguntas Frecuentes</Link></li>
                         </ul>
                     </div>
-                </div>
+                </ScrollReveal>
             </div>
 
             {/* Bottom Bar */}
             <div className="border-t border-white/20">
                 <div className="container mx-auto px-4 py-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
+                    <ScrollReveal animation="slide-in-bottom" delay={200} className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
                         <p>© {new Date().getFullYear()} Pullman Cargo. Todos los derechos reservados.</p>
                         <div className="flex gap-6">
                             <Link href="#" className="hover:text-white transition-colors">Política de Privacidad</Link>
                             <Link href="#" className="hover:text-white transition-colors">Términos de Servicio</Link>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </div>
         </footer>
