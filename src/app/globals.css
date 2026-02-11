@@ -57,6 +57,7 @@
 @layer base {
   :root {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
     --background: #ffffff;
     --foreground: #000000;
 

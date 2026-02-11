@@ -27,7 +27,6 @@ export function Header() {
     { href: "#servicios", label: "Servicios" },
     { href: "#flota", label: "Flota" },
     { href: "#nosotros", label: "Nosotros" },
-    { href: "#faq", label: "FAQ" },
     { href: "#contacto", label: "Contacto" },
   ]
 
