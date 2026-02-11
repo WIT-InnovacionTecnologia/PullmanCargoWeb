@@ -42,7 +42,7 @@ export function Header() {
             <img
               src="/brand/LOGO2 CARGO.png"
               alt="Pullman Cargo"
-              className="h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain"
             />
           </Link>
 

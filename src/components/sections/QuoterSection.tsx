@@ -44,12 +44,12 @@ export function QuoterSection() {
                             </CardHeader>
                             <CardContent className="space-y-6 flex-1">
                                 <Tabs defaultValue="personas" className="w-full mb-6" onValueChange={setActiveTab}>
-                                    <TabsList className="grid w-full grid-cols-4 h-auto p-0 bg-transparent gap-2">
+                                    <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-1 bg-muted/50 gap-2">
                                         {["Personas", "Emprendedores", "Empresas", "Internacional"].map((tab) => (
                                             <TabsTrigger
                                                 key={tab}
                                                 value={tab.toLowerCase()}
-                                                className="data-[state=active]:bg-transparent data-[state=active]:text-primary data-[state=active]:shadow-none text-gray-500 hover:text-primary transition-colors p-0 font-medium text-xs md:text-sm"
+                                                className="data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm text-gray-500 hover:text-primary transition-all py-2 font-medium text-xs md:text-sm rounded-md"
                                             >
                                                 {tab}
                                             </TabsTrigger>
@@ -164,7 +164,7 @@ export function QuoterSection() {
                                 </div>
 
                                 {/* SVG ILLUSTRATION FROM REFERENCE */}
-                                <div className="bg-white p-6 md:p-8 rounded-xl border border-primary/30 shadow-sm flex items-center justify-center">
+                                <div className="bg-white p-4 md:p-8 rounded-xl border border-primary/30 shadow-sm flex items-center justify-center">
                                     <div className="relative w-64 h-44 sm:w-80 sm:h-52 md:w-[22rem] md:h-55">
                                         <svg viewBox="-10 0 205 160" className="w-full h-full" role="img" aria-labelledby="box3dTitle box3dDesc">
                                             <title id="box3dTitle">Dimensiones de una caja</title>

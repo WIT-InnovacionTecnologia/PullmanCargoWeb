@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HeroSection() {
     return (
-        <section id="flota" className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 overflow-hidden bg-primary">
+        <section id="flota" className="relative w-full py-16 md:py-24 lg:py-32 xl:py-48 overflow-hidden bg-primary">
             {/* Background Pullman Bus Image */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -22,7 +22,7 @@ export function HeroSection() {
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2 items-center">
                     <ScrollReveal animation="slide-in-left" duration={800} className="flex flex-col justify-center space-y-4">
                         <div className="space-y-4">
-                            <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl xl:text-7xl/none text-white">
+                            <h1 className="text-3xl font-extrabold tracking-tighter sm:text-5xl xl:text-7xl/none text-white">
                                 Cotiza tu carga <span className="text-white">fácilmente</span>
                             </h1>
                             <p className="max-w-[600px] text-blue-50 md:text-2xl leading-relaxed">
