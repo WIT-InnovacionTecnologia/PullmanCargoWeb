@@ -46,6 +46,7 @@ export function Header() {
               width={200}
               height={40}
               className="h-8 md:h-10 w-auto object-contain"
+              style={{ width: "auto" }}
               priority
             />
           </Link>
@@ -96,6 +97,7 @@ export function Header() {
                       width={200}
                       height={40}
                       className="h-10 w-auto object-contain"
+                      style={{ width: "auto" }}
                       priority
                     />
                   </Link>
