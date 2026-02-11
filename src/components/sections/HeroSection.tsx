@@ -27,9 +27,6 @@ export function HeroSection() {
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2 items-center">
                     <ScrollReveal animation="slide-in-left" className="flex flex-col justify-center space-y-6">
                         <div className="space-y-4">
-                            <div className="inline-block rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-blue-100 backdrop-blur-sm border border-white/20 mb-2">
-                                🚀 Logística de clase mundial
-                            </div>
                             <h1 className="text-3xl min-[400px]:text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-7xl/none text-white break-words hyphens-auto">
                                 Cotiza tu carga <br /><span className="text-blue-200">fácil y rápido</span>
                             </h1>
