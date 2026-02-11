@@ -50,7 +50,7 @@ export function WhyChooseUs() {
                                 key={index}
                                 animation="slide-in-right"
                                 delay={benefit.delay}
-                                className="flex gap-4 p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10"
+                                className="flex gap-4 p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                             >
                                 <div className="flex-shrink-0">
                                     {benefit.icon}

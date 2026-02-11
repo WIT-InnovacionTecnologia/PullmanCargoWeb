@@ -17,7 +17,7 @@ export function ServicesSection() {
             title: "Encargos Exprés",
             description: "Envío rápido de documentos y paquetes pequeños con entrega en menos de 24 horas a las principales ciudades.",
             benefit: "Mejora los tiempos de respuesta de tu negocio con logística ágil.",
-            icon: <Zap className="h-10 w-10 text-secondary" />,
+            icon: <Zap className="h-6 w-6 text-white" />,
             image: "https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=800",
             delay: 100
         },
@@ -25,7 +25,7 @@ export function ServicesSection() {
             title: "Carga Consolidada (LTL)",
             description: "Transporte eficiente para medianas cargas compartiendo espacio en camión, reduciendo costos operativos.",
             benefit: "Optimiza tu presupuesto pagando solo por el espacio que utilizas.",
-            icon: <Truck className="h-10 w-10 text-secondary" />,
+            icon: <Truck className="h-6 w-6 text-white" />,
             image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800",
             delay: 200
         },
@@ -33,7 +33,7 @@ export function ServicesSection() {
             title: "Logística E-commerce",
             description: "Soluciones de última milla integradas para tiendas online con reportes de entrega en tiempo real.",
             benefit: "Aumenta la satisfacción de tus clientes con entregas puntuales y seguras.",
-            icon: <Package className="h-10 w-10 text-secondary" />,
+            icon: <Package className="h-6 w-6 text-white" />,
             image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800",
             delay: 300
         },
@@ -41,7 +41,7 @@ export function ServicesSection() {
             title: "Carga Internacional",
             description: "Gestión aduanera y transporte multimodal para importaciones y exportaciones a todo el mundo.",
             benefit: "Expande tus fronteras con el respaldo de nuestra red de agentes globales.",
-            icon: <Globe className="h-10 w-10 text-secondary" />,
+            icon: <Globe className="h-6 w-6 text-white" />,
             image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=800",
             delay: 400
         }
@@ -62,34 +62,37 @@ export function ServicesSection() {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} animation="slide-in-right" delay={service.delay} className="h-full">
-                            <Card className="h-full shadow-none hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col border border-[#003fa2] overflow-hidden group">
-                                <div className="relative h-48 w-full overflow-hidden">
+                            <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden group bg-white rounded-2xl hover:-translate-y-2">
+                                <div className="relative h-56 w-full overflow-hidden">
                                     <Image
                                         src={service.image}
                                         alt={service.title}
                                         fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 z-10">
-                                        <div className="bg-white/90 p-2 rounded-lg backdrop-blur-sm">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#003fa2]/90 via-[#003fa2]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                                    <div className="absolute bottom-4 left-4 text-white z-10">
+                                        <div className="bg-white/20 backdrop-blur-md p-2 rounded-xl inline-flex mb-2">
                                             {service.icon}
                                         </div>
                                     </div>
                                 </div>
-                                <CardHeader>
-                                    <CardTitle className="text-xl font-bold text-primary">{service.title}</CardTitle>
-                                    <CardDescription className="text-gray-600 mt-2">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-[#003fa2] transition-colors">
+                                        {service.title}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-1 flex flex-col">
+                                    <CardDescription className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
                                         {service.description}
                                     </CardDescription>
-                                </CardHeader>
-                                <CardContent className="mt-auto pt-0">
-                                    <div className="pt-4 border-t border-gray-50 flex items-start gap-2">
+                                    <div className="pt-4 border-t border-gray-100 flex items-start gap-2 mt-auto">
                                         <ShieldCheck className="h-4 w-4 text-[#003fa2] mt-0.5 flex-shrink-0" />
-                                        <p className="text-xs font-semibold text-secondary italic">
+                                        <p className="text-xs font-semibold text-[#003fa2]/80">
                                             {service.benefit}
                                         </p>
                                     </div>

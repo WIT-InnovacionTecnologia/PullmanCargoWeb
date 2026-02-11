@@ -33,24 +33,26 @@ export function QuoterSection() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {/* LEFT COLUMN: FORM */}
                         <ScrollReveal animation="slide-in-left" className="h-full">
-                            <Card className="shadow-none hover:shadow-xl transition-shadow duration-300 border border-primary bg-gradient-to-br from-white to-gray-50 flex flex-col h-full">
-                                <CardHeader className="pb-4">
-                                    <div className="text-2xl font-bold text-secondary flex items-center gap-2">
-                                        <Package className="h-6 w-6 text-primary" />
-                                        Cotiza tu envío
+                            <Card className="shadow-2xl border-0 rounded-3xl overflow-hidden flex flex-col h-full ring-1 ring-gray-100">
+                                <div className="bg-[#003fa2] p-6 text-white">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className="p-2 bg-white/10 rounded-xl backdrop-blur-sm">
+                                            <Package className="h-6 w-6 text-white" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold">Cotiza tu envío</h3>
                                     </div>
-                                    <p className="text-sm text-gray-600">
-                                        Selecciona origen/destino e ingresa medidas exactas, peso y valor declarado para obtener tu cotización.
+                                    <p className="text-blue-100 text-sm opacity-90 pl-1">
+                                        Calcula el costo de tu envío en segundos.
                                     </p>
-                                </CardHeader>
-                                <CardContent className="space-y-6 flex-1">
+                                </div>
+                                <CardContent className="space-y-6 flex-1 p-6 md:p-8 bg-white">
                                     <Tabs defaultValue="personas" className="w-full mb-6" onValueChange={setActiveTab}>
-                                        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-1 bg-muted/50 gap-2">
+                                        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-1.5 bg-gray-100/80 rounded-xl gap-1.5">
                                             {["Personas", "Emprendedores", "Empresas", "Internacional"].map((tab) => (
                                                 <TabsTrigger
                                                     key={tab}
                                                     value={tab.toLowerCase()}
-                                                    className="data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm text-gray-500 hover:text-primary transition-all py-2 font-medium text-xs md:text-sm rounded-md"
+                                                    className="data-[state=active]:bg-white data-[state=active]:text-[#003fa2] data-[state=active]:shadow-md text-gray-500 hover:text-gray-900 transition-all py-2.5 font-semibold text-sm rounded-lg"
                                                 >
                                                     {tab}
                                                 </TabsTrigger>
