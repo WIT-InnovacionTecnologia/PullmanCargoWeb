@@ -49,14 +49,18 @@ export function ContactSection() {
                             </div>
                         </div>
 
-                        {/* Map Placeholder */}
-                        <div className="w-full h-64 bg-gray-200 rounded-none relative overflow-hidden group">
-                            <div className="absolute inset-0 flex items-center justify-center bg-gray-300 group-hover:bg-gray-400 transition-colors">
-                                <p className="text-gray-500 font-bold uppercase tracking-widest flex items-center gap-2">
-                                    <MapPin /> Google Maps Frame
-                                </p>
-                            </div>
-                            {/* iframe would go here */}
+                        {/* Map Visual */}
+                        <div className="w-full h-80 bg-gray-200 rounded-none relative overflow-hidden shadow-lg border border-gray-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1356073400243!2d-70.68658822425577!3d-33.44577849733568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c459954460f3%3A0x6b8c9d467776510d!2sSan%20Borja%201234%2C%20Estaci%C3%B3n%20Central%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1707835123456!5m2!1ses!2scl"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="grayscale hover:grayscale-0 transition-all duration-500"
+                            />
                         </div>
                     </ScrollReveal>
 

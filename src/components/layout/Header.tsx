@@ -78,7 +78,7 @@ export function Header() {
           </nav>
 
           {/* Tracking Input */}
-          <div className="hidden lg:flex h-full items-center mr-6">
+          <div className="hidden lg:flex h-full items-center mr-6 ml-12">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
