@@ -2,10 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Menu, Facebook, Instagram, Linkedin, Search, Zap } from "lucide-react"
-import { TrackingSheet } from "@/components/tracking/TrackingSheet"
 import { Button } from "@/components/ui/button"
-import { toast } from "@/components/ui/use-toast"
 import {
   Sheet,
   SheetContent,
@@ -17,8 +16,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
-  const [isTrackingOpen, setIsTrackingOpen] = React.useState(false)
-  const [currentODT, setCurrentODT] = React.useState<string | null>(null)
+  const router = useRouter()
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -73,8 +71,7 @@ export function Header() {
                 const id = e.target.trackingId.value;
                 if (!id) return;
 
-                setCurrentODT(id);
-                setIsTrackingOpen(true);
+                router.push(`/seguimiento?odt=${id}`);
               }}
               className="relative h-full flex items-center"
             >

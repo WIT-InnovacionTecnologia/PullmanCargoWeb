@@ -1,25 +1,26 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { Search, Info } from "lucide-react"
 
+import { useRouter } from "next/navigation"
+
 export function TrackingSection() {
+    const router = useRouter()
+
     return (
         <section id="tracking" className="relative w-full py-32 overflow-hidden">
-            {/* Parallax Background */}
-            <div
-                className="absolute inset-0 bg-fixed bg-cover bg-center z-0"
-                style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200')"
-                }}
-            />
-            {/* Overlay */}
+            {/* ... (backgrounds remain same) ... */}
+            <div className="absolute inset-0 bg-fixed bg-cover bg-center z-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200')" }} />
             <div className="absolute inset-0 bg-[#003fa2]/80 mix-blend-multiply z-0" />
             <div className="absolute inset-0 bg-black/40 z-0" />
 
             <div className="container relative z-10 px-4 md:px-6 mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <ScrollReveal animation="slide-in-left" className="space-y-8">
+                        {/* ... (left content remains same) ... */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-white text-[#003fa2] text-sm font-bold uppercase tracking-wider transform -skew-x-12">
                             <span className="skew-x-12 flex items-center gap-2">
                                 <Info className="w-4 h-4" /> Tracking en Tiempo Real
@@ -44,9 +45,18 @@ export function TrackingSection() {
                                         Ingresa tu número de orden o guía de despacho.
                                     </p>
                                 </div>
-                                <form className="space-y-4">
+                                <form
+                                    onSubmit={(e) => {
+                                        e.preventDefault()
+                                        // @ts-ignore
+                                        const id = e.target.trackingId.value
+                                        if (id) router.push(`/seguimiento?odt=${id}`)
+                                    }}
+                                    className="space-y-4"
+                                >
                                     <div className="relative">
                                         <Input
+                                            name="trackingId"
                                             className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-[#003fa2] rounded-none px-4 text-lg font-bold placeholder:font-normal transition-all"
                                             placeholder="Ingrese su ODT"
                                             type="text"
