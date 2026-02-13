@@ -46,7 +46,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
+          <Link href={isEmpresas ? "/empresas" : "/"} className="flex items-center group transition-transform duration-300 hover:scale-105">
             <img
               src="/brand/LOGO2 CARGO.png"
               alt="Pullman Cargo"

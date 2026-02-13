@@ -3,6 +3,8 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { QuoterSection } from "@/components/sections/QuoterSection";
 import { TrackingSection } from "@/components/sections/TrackingSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { FleetSection } from "@/components/sections/FleetSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -10,8 +12,10 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <WhyChooseUs />
+      <FleetSection />
       <QuoterSection />
       <TrackingSection />
+      <ContactSection />
     </div>
   );
 }
