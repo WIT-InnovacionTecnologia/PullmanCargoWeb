@@ -49,7 +49,7 @@ export function ServicesSection() {
                     <div className="w-24 h-1.5 bg-[#003fa2] mx-auto mt-6" />
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} animation="slide-in-bottom" delay={service.delay} className="h-full">
                             <div className="group relative h-full bg-white p-8 shadow-lg hover:bg-[#003fa2] transition-colors duration-500 overflow-hidden">

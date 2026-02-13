@@ -88,11 +88,13 @@ export function Header() {
                     placeholder={placeholderText}
                     className="bg-transparent border-none outline-none w-40 focus:w-56 text-white placeholder:text-white/70 font-bold uppercase tracking-wider transition-all text-sm"
                   />
-                  {placeholderText === "INGRESA ODT" ? (
-                    <Zap className="w-4 h-4 text-white fill-white absolute right-2 top-1/2 -translate-y-1/2 animate-in fade-in zoom-in duration-200" />
-                  ) : (
-                    <Search className="w-4 h-4 text-white/90 absolute right-2 top-1/2 -translate-y-1/2 animate-in fade-in zoom-in duration-200" />
-                  )}
+                  <button type="submit" className="focus:outline-none">
+                    {placeholderText === "INGRESA ODT" ? (
+                      <Zap className="w-4 h-4 text-white fill-white animate-in fade-in zoom-in duration-200" />
+                    ) : (
+                      <Search className="w-4 h-4 text-white/90 animate-in fade-in zoom-in duration-200" />
+                    )}
+                  </button>
                 </div>
               </div>
             </form>
