@@ -49,17 +49,20 @@ export function QuoterSection() {
                             </div>
 
                             <Tabs defaultValue="personas" className="w-full mb-8" onValueChange={setActiveTab}>
-                                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gray-100 p-1 gap-1 rounded-none h-auto">
-                                    {["Personas", "Emprendedores", "Empresas", "Internacional"].map((tab) => (
-                                        <TabsTrigger
+                                <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100/50 rounded-xl mb-8">
+                                    {["Personas", "Emprendedores", "Empresas"].map((tab) => (
+                                        <button
                                             key={tab}
-                                            value={tab.toLowerCase()}
-                                            className="rounded-none text-xs font-bold uppercase py-3 data-[state=active]:bg-[#003fa2] data-[state=active]:text-white data-[state=active]:shadow-none transition-all"
+                                            onClick={() => setActiveTab(tab.toLowerCase())}
+                                            className={`py-3 px-4 rounded-lg text-sm font-bold transition-all duration-300 ${activeTab === tab.toLowerCase()
+                                                ? "bg-[#003fa2] text-white shadow-md transform scale-105"
+                                                : "text-gray-500 hover:text-[#003fa2] hover:bg-white/50"
+                                                }`}
                                         >
                                             {tab}
-                                        </TabsTrigger>
+                                        </button>
                                     ))}
-                                </TabsList>
+                                </div>
                             </Tabs>
 
                             <form className="space-y-6">

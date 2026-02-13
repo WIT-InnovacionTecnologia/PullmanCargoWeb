@@ -7,39 +7,32 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { ShieldCheck, Zap, Globe, Truck, Package, Clock } from "lucide-react"
+import { ShieldCheck, Zap, Globe, Truck, Package, Clock, Users } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import Image from "next/image"
 
 export function ServicesSection() {
     const services = [
         {
-            title: "Encargos Exprés",
-            description: "Envío rápido de documentos y paquetes con entrega prioritaria.",
-            benefit: "Mejora los tiempos de respuesta.",
-            icon: <Zap className="h-8 w-8 text-current" />,
+            title: "Personas",
+            description: "Envía tus encomiendas con seguridad y confianza a todo Chile.",
+            benefit: "Rapidez y cobertura.",
+            icon: <Users className="h-8 w-8 text-current" />,
             delay: 100
         },
         {
-            title: "Carga LTL",
-            description: "Transporte eficiente consolidado para optimizar costos.",
-            benefit: "Paga solo por el espacio que usas.",
+            title: "Empresas",
+            description: "Soluciones logísticas integrales para tu negocio. Carga masiva y distribución.",
+            benefit: "Eficiencia operativa.",
             icon: <Truck className="h-8 w-8 text-current" />,
             delay: 200
         },
         {
-            title: "E-commerce",
-            description: "Logística de última milla para tu tienda online.",
-            benefit: "Entregas puntuales y seguras.",
+            title: "Emprendedores",
+            description: "Tarifas preferenciales y herramientas digitales para potenciar tu emprendimiento.",
+            benefit: "Crecemos contigo.",
             icon: <Package className="h-8 w-8 text-current" />,
             delay: 300
-        },
-        {
-            title: "Internacional",
-            description: "Gestión aduanera y transporte sin fronteras.",
-            benefit: "Conectamos tu negocio con el mundo.",
-            icon: <Globe className="h-8 w-8 text-current" />,
-            delay: 400
         }
     ]
 

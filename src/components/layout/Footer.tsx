@@ -51,9 +51,8 @@ export function Footer() {
                         <h3 className="font-bold text-lg mb-4 text-[#ffffff]">Servicios</h3>
                         <ul className="space-y-3">
                             <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Transporte de Carga</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Logística E-commerce</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Distribución Nacional</Link></li>
-                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Carga Internacional</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">Carga LTL</Link></li>
+                            <li><Link href="#servicios" className="text-white/80 hover:text-[#ffffff] transition-colors">E-commerce</Link></li>
                         </ul>
                     </div>
 

@@ -48,7 +48,7 @@ export function TrackingSection() {
                                     <div className="relative">
                                         <Input
                                             className="h-14 bg-gray-50 text-black border-2 border-gray-200 focus:border-[#003fa2] rounded-none px-4 text-lg font-bold placeholder:font-normal transition-all"
-                                            placeholder="Ej: 123456789"
+                                            placeholder="Ingrese su ODT"
                                             type="text"
                                         />
                                     </div>

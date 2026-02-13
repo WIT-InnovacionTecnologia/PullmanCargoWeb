@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Menu, Facebook, Instagram, Linkedin, Search, Zap } from "lucide-react"
+import { TrackingSheet } from "@/components/tracking/TrackingSheet"
 import { Button } from "@/components/ui/button"
 import { toast } from "@/components/ui/use-toast"
 import {
@@ -16,6 +17,8 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
+  const [isTrackingOpen, setIsTrackingOpen] = React.useState(false)
+  const [currentODT, setCurrentODT] = React.useState<string | null>(null)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -70,11 +73,8 @@ export function Header() {
                 const id = e.target.trackingId.value;
                 if (!id) return;
 
-                toast({
-                  title: "Estado del Envío",
-                  description: `Orden #${id}: En Tránsito - Entrega estimada: Mañana`,
-                  className: "bg-white border-l-4 border-[#003fa2] text-[#003fa2]",
-                });
+                setCurrentODT(id);
+                setIsTrackingOpen(true);
               }}
               className="relative h-full flex items-center"
             >
