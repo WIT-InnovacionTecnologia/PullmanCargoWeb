@@ -35,7 +35,7 @@ export function FleetSection() {
             name: "Tractocamión",
             capacity: "Arrastre 45 Ton",
             desc: "Potencia para largas distancias y movimiento de contenedores high-cube.",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=800"
         },
         {
             name: "Sider (Cortina)",
@@ -47,7 +47,7 @@ export function FleetSection() {
             name: "Van / City Car",
             capacity: "500 Kg - 1 Ton",
             desc: "Agilidad urbana para paquetería express y entregas de última milla.",
-            image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1562141961-4a5d9d0e0c15?q=80&w=800"
         }
     ]
 
