@@ -5,7 +5,7 @@ import { TrackingSection } from "@/components/sections/TrackingSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { FleetSection } from "@/components/sections/FleetSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { AgenciesSection } from "@/components/sections/AgenciesSection";
+import { AgenciesBannerSection } from "@/components/sections/AgenciesBannerSection";
 
 export default function EmpresasPage() {
     return (
@@ -16,7 +16,7 @@ export default function EmpresasPage() {
             <FleetSection />
             <QuoterSection />
             <TrackingSection />
-            <AgenciesSection />
+            <AgenciesBannerSection />
             <ContactSection />
         </div>
     );

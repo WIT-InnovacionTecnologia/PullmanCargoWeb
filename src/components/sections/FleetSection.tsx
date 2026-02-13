@@ -41,7 +41,7 @@ export function FleetSection() {
             name: "Sider (Cortina)",
             capacity: "26 Toneladas",
             desc: "Carga y descarga lateral ágil. Versatilidad para pallets y maquinaria.",
-            image: "https://images.unsplash.com/photo-1593922384768-e448b47a9f73?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
         },
         {
             name: "Van / City Car",
