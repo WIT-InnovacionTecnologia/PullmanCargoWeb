@@ -72,6 +72,16 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={(e) => {
+                  // Handle smooth scroll for anchor links on the same page
+                  if (link.href.startsWith('#')) {
+                    e.preventDefault();
+                    const element = document.querySelector(link.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
                 className="text-gray-600 hover:text-[#003fa2] font-medium transition-colors duration-200 relative group text-sm uppercase tracking-wide"
               >
                 {link.label}
@@ -167,6 +177,16 @@ export function Header() {
                       <SheetClose asChild key={link.href}>
                         <Link
                           href={link.href}
+                          onClick={(e) => {
+                            // Handle smooth scroll for anchor links on the same page
+                            if (link.href.startsWith('#')) {
+                              e.preventDefault();
+                              const element = document.querySelector(link.href);
+                              if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }
+                          }}
                           className="group flex items-center justify-between text-2xl font-bold text-gray-800 hover:text-[#003fa2] transition-all duration-300"
                           style={{ animationDelay: `${index * 100}ms` }}
                         >
