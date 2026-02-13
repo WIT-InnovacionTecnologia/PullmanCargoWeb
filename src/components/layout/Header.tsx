@@ -2,8 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Menu, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Menu, Facebook, Instagram, Linkedin, Search, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { toast } from "@/components/ui/use-toast"
 import {
   Sheet,
   SheetContent,
@@ -14,6 +15,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +60,46 @@ export function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Tracking Input */}
+          <div className="hidden lg:flex h-full items-center mr-6">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // @ts-ignore
+                const id = e.target.trackingId.value;
+                if (!id) return;
+
+                toast({
+                  title: "Estado del Envío",
+                  description: `Orden #${id}: En Tránsito - Entrega estimada: Mañana`,
+                  className: "bg-white border-l-4 border-[#003fa2] text-[#003fa2]",
+                });
+              }}
+              className="relative h-full flex items-center"
+            >
+              {/* Full height container with skew */}
+              <div
+                className="relative h-full flex items-center bg-[#003fa2] transform -skew-x-12 px-6 transition-all duration-300 hover:bg-[#002d75]"
+                onMouseEnter={() => setPlaceholderText("INGRESA ODT")}
+                onMouseLeave={() => setPlaceholderText("TRACKING")}
+              >
+                <div className="skew-x-12 flex items-center gap-2">
+                  <input
+                    type="text"
+                    name="trackingId"
+                    placeholder={placeholderText}
+                    className="bg-transparent border-none outline-none w-40 focus:w-56 text-white placeholder:text-white/70 font-bold uppercase tracking-wider transition-all text-sm"
+                  />
+                  {placeholderText === "INGRESA ODT" ? (
+                    <Zap className="w-4 h-4 text-white fill-white absolute right-2 top-1/2 -translate-y-1/2 animate-in fade-in zoom-in duration-200" />
+                  ) : (
+                    <Search className="w-4 h-4 text-white/90 absolute right-2 top-1/2 -translate-y-1/2 animate-in fade-in zoom-in duration-200" />
+                  )}
+                </div>
+              </div>
+            </form>
+          </div>
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
