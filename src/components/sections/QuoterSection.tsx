@@ -54,10 +54,10 @@ export function QuoterSection() {
                                 Personas
                             </TabsTrigger>
                             <TabsTrigger
-                                value="empresas"
+                                value="emprendedores"
                                 className="rounded-full text-base font-bold uppercase data-[state=active]:bg-[#003fa2] data-[state=active]:text-white transition-all"
                             >
-                                Empresas
+                                Emprendedores
                             </TabsTrigger>
                         </TabsList>
                     </div>
@@ -144,58 +144,84 @@ export function QuoterSection() {
                         </div>
                     </TabsContent>
 
-                    {/* EMPRESAS TAB - STATIC RATES */}
-                    <TabsContent value="empresas">
+                    {/* EMPRENDEDORES TAB - CALCULATOR (Demo) */}
+                    <TabsContent value="emprendedores">
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <ScrollReveal animation="slide-in-left" className="h-full">
-                                <div className="bg-white border-2 border-gray-100 shadow-2xl relative overflow-hidden group">
+                                <div className="bg-white border-2 border-gray-100 p-8 shadow-2xl relative">
                                     <div className="absolute top-0 left-0 w-full h-2 bg-[#003fa2]" />
-                                    <div className="p-8">
-                                        <div className="flex items-center gap-4 mb-8">
-                                            <div className="p-3 bg-[#003fa2] rounded-none rotate-3">
-                                                <Table2 className="h-6 w-6 text-white -rotate-3" />
-                                            </div>
-                                            <h3 className="text-2xl font-black uppercase text-gray-900">Tarifas Corporativas (Ref)</h3>
-                                        </div>
-                                        <div className="space-y-4">
-                                            {rates.map((rate, index) => (
-                                                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 hover:bg-blue-50 transition-colors border-l-4 border-transparent hover:border-[#003fa2] group/item">
-                                                    <div className="flex items-center gap-3">
-                                                        <MapPin className="w-4 h-4 text-gray-400 group-hover/item:text-[#003fa2] transition-colors" />
-                                                        <span className="font-bold text-gray-700 uppercase">{rate.dest}</span>
-                                                    </div>
-                                                    <div className="text-right">
-                                                        <div className="font-black text-xl text-[#003fa2]">${rate.price}</div>
-                                                        <div className="text-xs font-bold text-gray-400 uppercase tracking-wide">{rate.time}</div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <p className="mt-6 text-xs text-gray-400 font-medium text-center">
-                                            * Tarifas base para volumen estándar.
-                                        </p>
+                                    <div className="mb-8">
+                                        <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Cotizador Pyme</h3>
+                                        <p className="text-sm text-gray-400 font-medium">Tarifas preferenciales para emprendedores.</p>
                                     </div>
+                                    <form onSubmit={handleQuote} className="space-y-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="origin-pyme" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
+                                                <div className="relative">
+                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                                    <Input id="origin-pyme" placeholder="Ciudad de origen" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                                </div>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="destination-pyme" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
+                                                <div className="relative">
+                                                    <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                                    <Input id="destination-pyme" placeholder="Ciudad de destino" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones (cm)</Label>
+                                            <div className="grid grid-cols-3 gap-2">
+                                                <Input placeholder="Largo" type="number" className="h-12 bg-gray-50" />
+                                                <Input placeholder="Ancho" type="number" className="h-12 bg-gray-50" />
+                                                <Input placeholder="Alto" type="number" className="h-12 bg-gray-50" />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label htmlFor="weight-pyme" className="text-sm font-bold uppercase text-gray-500">Peso (Kg)</Label>
+                                            <div className="relative">
+                                                <Scale className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
+                                                <Input id="weight-pyme" placeholder="0.0" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
+                                            </div>
+                                        </div>
+                                        <Button disabled={loading} className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4">
+                                            {loading ? "Calculando..." : "Cotizar Ahora"}
+                                        </Button>
+                                    </form>
                                 </div>
                             </ScrollReveal>
 
                             <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
-                                <div className="relative">
-                                    <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
-                                        Soluciones <br /> <span className="text-[#003fa2]">Corporativas</span>
-                                    </h3>
-                                    <p className="text-gray-500 text-lg leading-relaxed">
-                                        Para operaciones de alto volumen, ofrecemos convenios, cuenta corriente y ejecutivos dedicados.
-                                    </p>
-                                </div>
-                                <div className="bg-gray-50 p-8 border border-gray-100">
-                                    <form className="space-y-4">
-                                        <Input placeholder="Razón Social" className="bg-white" />
-                                        <Input placeholder="Email Corporativo" className="bg-white" />
-                                        <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-lg hover:shadow-xl">
-                                            Contactar Ejecutivo <ArrowRight className="ml-2 w-5 h-5" />
-                                        </Button>
-                                    </form>
-                                </div>
+                                {result ? (
+                                    <div className="bg-gray-900 p-8 relative overflow-hidden animate-in fade-in zoom-in duration-500">
+                                        <div className="relative z-10 text-center space-y-4">
+                                            <p className="text-blue-400 uppercase tracking-widest font-bold text-sm">Tarifa Emprendedor</p>
+                                            <h3 className="text-6xl font-black text-white">${(result * 0.85).toLocaleString("es-CL", { maximumFractionDigits: 0 })}</h3>
+                                            <p className="text-gray-400 font-medium">IVA Incluido (15% DCTO aplicado)</p>
+                                            <div className="pt-6 border-t border-gray-800">
+                                                <Button className="w-full bg-white text-black hover:bg-[#003fa2] hover:text-white font-bold uppercase">Contratar con Descuento</Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="relative">
+                                        <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
+                                            Impulsa tu <br /> <span className="text-[#003fa2]">Emprendimiento</span>
+                                        </h3>
+                                        <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                                            Accede a tarifas preferenciales y herramientas de gestión pensadas para tu negocio.
+                                        </p>
+                                        <ul className="space-y-3">
+                                            {["Descuentos por Volumen", "Ejecutivo de Cuenta", "Retiro a Domicilio"].map((item, i) => (
+                                                <li key={i} className="flex items-center gap-3 text-lg font-bold text-gray-700">
+                                                    <CheckCircle2 className="h-5 w-5 text-[#003fa2]" /> {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </ScrollReveal>
                         </div>
                     </TabsContent>
