@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Building2 } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export function BusinessPortalCTA() {
     return (
@@ -16,13 +16,6 @@ export function BusinessPortalCTA() {
 
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <ScrollReveal animation="fade-in" className="text-center max-w-4xl mx-auto">
-                    {/* Icon */}
-                    <div className="flex justify-center mb-8">
-                        <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                            <Building2 className="w-10 h-10 text-white" />
-                        </div>
-                    </div>
-
                     {/* Heading */}
                     <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
                         Portal de <span className="text-orange-500">Empresas</span>
