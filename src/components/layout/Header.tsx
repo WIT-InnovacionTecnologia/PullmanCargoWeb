@@ -132,16 +132,28 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-              <Link href="/#cotizador">
-                Cotizar Ahora
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="border-[#003fa2] text-[#003fa2] hover:bg-[#003fa2] hover:text-white rounded-full font-medium transition-all duration-300">
-              <Link href="/login">
-                Ingresar
-              </Link>
-            </Button>
+            {isEmpresas ? (
+              // Empresas page: Only show orange Ingresar button
+              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                <a href="https://empresas.pullmango.cl/login.php" target="_blank" rel="noopener noreferrer">
+                  Ingresar
+                </a>
+              </Button>
+            ) : (
+              // Home page: Show both buttons
+              <>
+                <Button asChild className="bg-[#003fa2] hover:bg-[#002d75] text-white font-bold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                  <Link href="/#cotizador">
+                    Cotizar Ahora
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-[#003fa2] text-[#003fa2] hover:bg-[#003fa2] hover:text-white rounded-full font-medium transition-all duration-300">
+                  <Link href="/login">
+                    Ingresar
+                  </Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Nav */}
