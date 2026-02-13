@@ -27,6 +27,7 @@ export function Header() {
   }, [])
 
   const navLinks = [
+    { href: "/empresas", label: "Empresas" },
     { href: "#servicios", label: "Servicios" },
     { href: "#flota", label: "Flota" },
     { href: "#nosotros", label: "Nosotros" },

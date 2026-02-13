@@ -1,162 +1,96 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { Package, Truck, Users, Globe, Info, Ruler, TriangleAlert, MapPin, Box, Scale, DollarSign, Zap, CheckCircle2 } from "lucide-react"
+import { CheckCircle2, MapPin, ArrowRight, Table2 } from "lucide-react"
 
 export function QuoterSection() {
-    const [result, setResult] = useState<number | null>(null)
-    const [loading, setLoading] = useState(false)
-    const [activeTab, setActiveTab] = useState("personas")
-
-    const handleQuote = (e: React.FormEvent) => {
-        e.preventDefault()
-        setLoading(true)
-        // Simulate API call
-        setTimeout(() => {
-            setResult(Math.floor(Math.random() * 50000) + 15000) // Mock logic
-            setLoading(false)
-        }, 1500)
-    }
+    const rates = [
+        { dest: "Valparaíso / Viña", price: "4.990", time: "24 hrs" },
+        { dest: "La Serena / Coquimbo", price: "8.990", time: "24 - 48 hrs" },
+        { dest: "Concepción / Talcahuano", price: "9.990", time: "24 - 48 hrs" },
+        { dest: "Antofagasta", price: "14.990", time: "48 - 72 hrs" },
+        { dest: "Puerto Montt", price: "12.990", time: "48 - 72 hrs" },
+        { dest: "Arica", price: "18.990", time: "72+ hrs" },
+    ]
 
     return (
         <section id="cotizador" className="w-full py-24 bg-white border-t border-gray-100">
             <div className="container px-4 md:px-6 mx-auto">
                 <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
-                        Cotiza tu <span className="text-[#003fa2]">Envío</span>
+                        Tarifas <span className="text-[#003fa2]">Referenciales</span>
                     </h2>
                     <p className="text-gray-500 text-lg">
-                        Obtén una estimación inmediata para tus necesidades de transporte.
+                        Precios base para encomiendas estándar (hasta 5kg). Para carga mayor, contáctanos.
                     </p>
                 </ScrollReveal>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    {/* LEFT COLUMN: FORM */}
+                    {/* LEFT COLUMN: RATES TABLE */}
                     <ScrollReveal animation="slide-in-left" className="h-full">
-                        <div className="bg-white border-2 border-gray-100 p-8 shadow-2xl relative">
+                        <div className="bg-white border-2 border-gray-100 shadow-2xl relative overflow-hidden group">
                             <div className="absolute top-0 left-0 w-full h-2 bg-[#003fa2]" />
 
-                            <div className="mb-8">
-                                <h3 className="text-2xl font-black uppercase text-gray-900 mb-2">Calculadora de Tarifas</h3>
-                                <p className="text-sm text-gray-400 font-medium">Completa los datos para cotizar.</p>
-                            </div>
+                            <div className="p-8">
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="p-3 bg-[#003fa2] rounded-none rotate-3">
+                                        <Table2 className="h-6 w-6 text-white -rotate-3" />
+                                    </div>
+                                    <h3 className="text-2xl font-black uppercase text-gray-900">Origen: Santiago</h3>
+                                </div>
 
-                            <Tabs defaultValue="personas" className="w-full mb-8" onValueChange={setActiveTab}>
-                                <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100/50 rounded-xl mb-8">
-                                    {["Personas", "Emprendedores", "Empresas"].map((tab) => (
-                                        <button
-                                            key={tab}
-                                            onClick={() => setActiveTab(tab.toLowerCase())}
-                                            className={`py-3 px-4 rounded-lg text-sm font-bold transition-all duration-300 ${activeTab === tab.toLowerCase()
-                                                ? "bg-[#003fa2] text-white shadow-md transform scale-105"
-                                                : "text-gray-500 hover:text-[#003fa2] hover:bg-white/50"
-                                                }`}
-                                        >
-                                            {tab}
-                                        </button>
+                                <div className="space-y-4">
+                                    {rates.map((rate, index) => (
+                                        <div key={index} className="flex items-center justify-between p-4 bg-gray-50 hover:bg-blue-50 transition-colors border-l-4 border-transparent hover:border-[#003fa2] group/item">
+                                            <div className="flex items-center gap-3">
+                                                <MapPin className="w-4 h-4 text-gray-400 group-hover/item:text-[#003fa2] transition-colors" />
+                                                <span className="font-bold text-gray-700 uppercase">{rate.dest}</span>
+                                            </div>
+                                            <div className="text-right">
+                                                <div className="font-black text-xl text-[#003fa2]">${rate.price}</div>
+                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-wide">{rate.time}</div>
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
-                            </Tabs>
-
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="origin" className="text-sm font-bold uppercase text-gray-500">Origen</Label>
-                                        <div className="relative">
-                                            <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                            <Input id="origin" placeholder="Ciudad de origen" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="destination" className="text-sm font-bold uppercase text-gray-500">Destino</Label>
-                                        <div className="relative">
-                                            <MapPin className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                            <Input id="destination" placeholder="Ciudad de destino" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label className="text-sm font-bold uppercase text-gray-500">Dimensiones del paquete</Label>
-                                    <div className="grid grid-cols-3 gap-2">
-                                        <div className="relative">
-                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
-                                            <Input placeholder="Largo (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
-                                        </div>
-                                        <div className="relative">
-                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
-                                            <Input placeholder="Ancho (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
-                                        </div>
-                                        <div className="relative">
-                                            <Box className="absolute left-3 top-3.5 h-3.5 w-3.5 text-gray-400" />
-                                            <Input placeholder="Alto (cm)" type="number" className="pl-8 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] text-sm" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="weight" className="text-sm font-bold uppercase text-gray-500">Peso (Kg)</Label>
-                                        <div className="relative">
-                                            <Scale className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                            <Input id="weight" placeholder="0.0" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="value" className="text-sm font-bold uppercase text-gray-500">Valor Declarado</Label>
-                                        <div className="relative">
-                                            <DollarSign className="absolute left-4 top-4 h-4 w-4 text-gray-400" />
-                                            <Input id="value" placeholder="10000" type="number" className="pl-10 h-12 bg-gray-50 border-gray-200 rounded-none focus:border-[#003fa2] font-semibold" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-xl hover:shadow-2xl mt-4">
-                                    Cotizar Ahora
-                                </Button>
-                            </form>
+                                <p className="mt-6 text-xs text-gray-400 font-medium text-center">
+                                    * Valores referenciales sujetos a cambio. No incluyen IVA.
+                                </p>
+                            </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* RIGHT COLUMN: RESULT/INFO */}
+                    {/* RIGHT COLUMN: CONTACT / INFO */}
                     <ScrollReveal animation="slide-in-right" delay={200} className="h-full flex flex-col justify-center space-y-8 py-8">
                         <div className="relative">
                             <div className="absolute -left-8 top-0 w-1 h-20 bg-[#003fa2]" />
                             <h3 className="text-3xl md:text-4xl font-black uppercase text-gray-900 mb-4">
-                                ¿Por qué cotizar con <br /> <span className="text-[#003fa2]">Pullman Cargo?</span>
+                                ¿Necesitas un <br /> <span className="text-[#003fa2]">Servicio a Medida?</span>
                             </h3>
                             <p className="text-gray-500 text-lg leading-relaxed">
-                                Garantizamos la mejor relación precio-calidad del mercado, con tiempos de respuesta récord y seguridad total en cada kilómetro.
+                                Para cargas consolidadas, mudanzas o distribución masiva empresas, solicita una evaluación personalizada.
                             </p>
                         </div>
 
-                        <div className="bg-gray-900 text-white p-8 rounded-none relative overflow-hidden">
-                            <div className="relative z-10">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="p-3 bg-[#003fa2] rounded-none">
-                                        <Zap className="h-6 w-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-bold text-gray-400 uppercase">Tiempo Estimado</p>
-                                        <p className="text-2xl font-black">24 - 48 Horas</p>
-                                    </div>
-                                </div>
-                                <div className="w-full bg-white/10 h-px mb-6" />
-                                <ul className="space-y-3">
-                                    {["Cobertura Nacional", "Seguimiento GPS", "Seguro de Carga Incluido"].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
-                                            <CheckCircle2 className="h-4 w-4 text-[#003fa2]" /> {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div className="bg-gray-50 p-8 border border-gray-100">
+                            <form className="space-y-4">
+                                <Input placeholder="Nombre de la Empresa / Persona" className="bg-white" />
+                                <Input placeholder="Teléfono de Contacto" className="bg-white" />
+                                <Input placeholder="Correo Electrónico" className="bg-white" />
+                                <Button className="w-full h-14 bg-[#003fa2] hover:bg-black text-white font-black uppercase tracking-widest text-lg rounded-none transition-all shadow-lg hover:shadow-xl">
+                                    Solicitar Ejecutivo <ArrowRight className="ml-2 w-5 h-5" />
+                                </Button>
+                            </form>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4">
+                            {["Convenio Empresas", "Facturación Mensual", "Ejecutivo Asignado"].map((tag, i) => (
+                                <span key={i} className="px-4 py-2 bg-gray-100 text-[#003fa2] text-sm font-bold uppercase tracking-wide flex items-center gap-2">
+                                    <CheckCircle2 className="w-4 h-4" /> {tag}
+                                </span>
+                            ))}
                         </div>
                     </ScrollReveal>
                 </div>
