@@ -47,7 +47,7 @@ export function FleetSection() {
             name: "Van / City Car",
             capacity: "500 Kg - 1 Ton",
             desc: "Agilidad urbana para paquetería express y entregas de última milla.",
-            image: "https://images.unsplash.com/photo-1562141961-4a5d9d0e0c15?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?q=80&w=800"
         }
     ]
 
