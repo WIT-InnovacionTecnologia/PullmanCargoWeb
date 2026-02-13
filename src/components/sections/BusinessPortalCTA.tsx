@@ -25,7 +25,7 @@ export function BusinessPortalCTA() {
 
                     {/* Heading */}
                     <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-                        Portal de <span className="text-yellow-400">Empresas</span>
+                        Portal de <span className="text-orange-500">Empresas</span>
                     </h2>
 
                     <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
@@ -35,17 +35,17 @@ export function BusinessPortalCTA() {
                     {/* Features Grid */}
                     <div className="grid md:grid-cols-3 gap-6 mb-12 mt-12">
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <TrendingUp className="w-8 h-8 text-yellow-400 mb-3 mx-auto" />
+                            <TrendingUp className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Gestión Centralizada</h3>
                             <p className="text-gray-300 text-sm">Control total de tus envíos desde un solo lugar</p>
                         </div>
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <Shield className="w-8 h-8 text-yellow-400 mb-3 mx-auto" />
+                            <Shield className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Seguridad Garantizada</h3>
                             <p className="text-gray-300 text-sm">Protección de datos y transacciones seguras</p>
                         </div>
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <ExternalLink className="w-8 h-8 text-yellow-400 mb-3 mx-auto" />
+                            <ExternalLink className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Acceso 24/7</h3>
                             <p className="text-gray-300 text-sm">Disponible cuando lo necesites</p>
                         </div>
@@ -54,7 +54,7 @@ export function BusinessPortalCTA() {
                     {/* CTA Button */}
                     <Button
                         asChild
-                        className="h-16 px-12 bg-yellow-400 hover:bg-yellow-500 text-black font-black text-lg uppercase tracking-widest rounded-none shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105"
+                        className="h-16 px-12 bg-orange-500 hover:bg-orange-600 text-white font-black text-lg uppercase tracking-widest rounded-none shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
                     >
                         <a
                             href="https://empresas.pullmango.cl/login.php"
