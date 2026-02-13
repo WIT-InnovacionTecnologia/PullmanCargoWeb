@@ -1,6 +1,6 @@
 import { HeroSectionEmpresas } from "@/components/sections/HeroSectionEmpresas";
 import { ServicesSectionEmpresas } from "@/components/sections/ServicesSectionEmpresas";
-import { QuoterSection } from "@/components/sections/QuoterSection";
+import { BusinessPortalCTA } from "@/components/sections/BusinessPortalCTA";
 import { TrackingSection } from "@/components/sections/TrackingSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { FleetSection } from "@/components/sections/FleetSection";
@@ -14,7 +14,7 @@ export default function EmpresasPage() {
             <ServicesSectionEmpresas />
             <WhyChooseUs />
             <FleetSection />
-            <QuoterSection />
+            <BusinessPortalCTA />
             <TrackingSection />
             <AgenciesBannerSection />
             <ContactSection />
