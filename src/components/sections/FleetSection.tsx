@@ -41,13 +41,13 @@ export function FleetSection() {
             name: "Sider (Cortina)",
             capacity: "26 Toneladas",
             desc: "Carga y descarga lateral ágil. Versatilidad para pallets y maquinaria.",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800"
         },
         {
             name: "Van / City Car",
             capacity: "500 Kg - 1 Ton",
             desc: "Agilidad urbana para paquetería express y entregas de última milla.",
-            image: "https://images.unsplash.com/photo-1597328290883-50c5753b7c3e?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1622359287841-30db76916fae?q=80&w=800"
         }
     ]
 
@@ -79,9 +79,9 @@ export function FleetSection() {
                                                 src={item.image}
                                                 alt={item.name}
                                                 fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-100 group-hover:opacity-40"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
                                         </div>
 
                                         {/* Content */}
