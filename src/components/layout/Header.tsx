@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { Menu, Facebook, Instagram, Linkedin, Search, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,6 +17,9 @@ export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
   const router = useRouter()
+  const pathname = usePathname()
+
+  const isEmpresas = pathname === "/empresas"
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +30,9 @@ export function Header() {
   }, [])
 
   const navLinks = [
-    { href: "/empresas", label: "Empresas" },
+    isEmpresas
+      ? { href: "/", label: "Personas" }
+      : { href: "/empresas", label: "Empresas" },
     { href: "#servicios", label: "Servicios" },
     { href: "#flota", label: "Flota" },
     { href: "#nosotros", label: "Nosotros" },
