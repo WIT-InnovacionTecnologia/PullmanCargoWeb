@@ -16,6 +16,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [placeholderText, setPlaceholderText] = React.useState("TRACKING")
+  const [trackingId, setTrackingId] = React.useState("")
   const router = useRouter()
   const pathname = usePathname()
 
@@ -38,6 +39,8 @@ export function Header() {
     { href: "#nosotros", label: "Nosotros" },
     { href: "#contacto", label: "Contacto" },
   ]
+
+  const showTrackingButton = placeholderText === "INGRESA ODT" || trackingId.length > 0;
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white py-4"}`}>
@@ -64,7 +67,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 ml-16">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -82,11 +85,8 @@ export function Header() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                // @ts-ignore
-                const id = e.target.trackingId.value;
-                if (!id) return;
-
-                router.push(`/seguimiento?odt=${id}`);
+                if (!trackingId) return; // Use state
+                router.push(`/seguimiento?odt=${trackingId}`);
               }}
               className="relative h-full flex items-center"
             >
@@ -100,14 +100,16 @@ export function Header() {
                   <input
                     type="text"
                     name="trackingId"
+                    value={trackingId}
+                    onChange={(e) => setTrackingId(e.target.value)}
                     placeholder={placeholderText}
                     className="bg-transparent border-none outline-none w-40 focus:w-56 text-white placeholder:text-white/70 font-bold uppercase tracking-wider transition-all text-sm"
                   />
                   <button
                     type="submit"
-                    className={`focus:outline-none flex items-center justify-center rounded-full transition-all duration-300 ${placeholderText === "INGRESA ODT" ? "w-7 h-7 bg-white shadow-md hover:shadow-lg hover:scale-110" : ""}`}
+                    className={`focus:outline-none flex items-center justify-center rounded-full transition-all duration-300 ${showTrackingButton ? "w-7 h-7 bg-white shadow-md hover:shadow-lg hover:scale-110" : ""}`}
                   >
-                    {placeholderText === "INGRESA ODT" ? (
+                    {showTrackingButton ? (
                       <Zap className="w-4 h-4 text-[#003fa2] fill-[#003fa2] animate-in fade-in zoom-in duration-200" />
                     ) : (
                       <Search className="w-4 h-4 text-white/90 animate-in fade-in zoom-in duration-200" />
