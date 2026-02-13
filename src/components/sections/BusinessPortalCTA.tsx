@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Building2, TrendingUp, Shield } from "lucide-react"
+import { ExternalLink, Building2 } from "lucide-react"
 
 export function BusinessPortalCTA() {
     return (
@@ -35,17 +35,14 @@ export function BusinessPortalCTA() {
                     {/* Features Grid */}
                     <div className="grid md:grid-cols-3 gap-6 mb-12 mt-12">
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <TrendingUp className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Gestión Centralizada</h3>
                             <p className="text-gray-300 text-sm">Control total de tus envíos desde un solo lugar</p>
                         </div>
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <Shield className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Seguridad Garantizada</h3>
                             <p className="text-gray-300 text-sm">Protección de datos y transacciones seguras</p>
                         </div>
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
-                            <ExternalLink className="w-8 h-8 text-orange-500 mb-3 mx-auto" />
                             <h3 className="font-bold text-lg mb-2">Acceso 24/7</h3>
                             <p className="text-gray-300 text-sm">Disponible cuando lo necesites</p>
                         </div>

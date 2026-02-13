@@ -11,10 +11,10 @@ export default function EmpresasPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <HeroSectionEmpresas />
+            <BusinessPortalCTA />
             <ServicesSectionEmpresas />
             <WhyChooseUs />
             <FleetSection />
-            <BusinessPortalCTA />
             <TrackingSection />
             <AgenciesBannerSection />
             <ContactSection />
