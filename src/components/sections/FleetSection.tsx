@@ -90,7 +90,7 @@ export function FleetSection() {
                                             <h3 className="text-2xl font-black uppercase text-white tracking-wide">
                                                 {item.name}
                                             </h3>
-                                            <p className="text-[#003fa2] font-bold text-sm uppercase tracking-widest">
+                                            <p className="text-[#003fa2] font-bold text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                                 Capacidad: {item.capacity}
                                             </p>
                                         </div>
