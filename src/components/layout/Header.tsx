@@ -103,9 +103,12 @@ export function Header() {
                     placeholder={placeholderText}
                     className="bg-transparent border-none outline-none w-40 focus:w-56 text-white placeholder:text-white/70 font-bold uppercase tracking-wider transition-all text-sm"
                   />
-                  <button type="submit" className="focus:outline-none">
+                  <button
+                    type="submit"
+                    className={`focus:outline-none flex items-center justify-center rounded-full transition-all duration-300 ${placeholderText === "INGRESA ODT" ? "w-7 h-7 bg-white shadow-md hover:shadow-lg hover:scale-110" : ""}`}
+                  >
                     {placeholderText === "INGRESA ODT" ? (
-                      <Zap className="w-4 h-4 text-white fill-white animate-in fade-in zoom-in duration-200" />
+                      <Zap className="w-4 h-4 text-[#003fa2] fill-[#003fa2] animate-in fade-in zoom-in duration-200" />
                     ) : (
                       <Search className="w-4 h-4 text-white/90 animate-in fade-in zoom-in duration-200" />
                     )}
