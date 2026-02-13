@@ -1,0 +1,115 @@
+"use client"
+
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import { Card, CardContent } from "@/components/ui/card"
+import { MapPin, Phone, Clock, Navigation } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+export function AgenciesSection() {
+    const agencies = [
+        {
+            city: "Santiago (Matriz)",
+            address: "San Borja 1234, Estación Central",
+            phone: "+56 2 2222 2222",
+            hours: "Lun-Vie: 08:30 - 18:30",
+            region: "Metropolitana"
+        },
+        {
+            city: "Antofagasta",
+            address: "Pedro Aguirre Cerda 1234",
+            phone: "+56 55 2222 222",
+            hours: "Lun-Vie: 09:00 - 18:00",
+            region: "Norte"
+        },
+        {
+            city: "La Serena",
+            address: "Av. Balmaceda 4321",
+            phone: "+56 51 2222 222",
+            hours: "Lun-Vie: 09:00 - 18:00",
+            region: "Norte"
+        },
+        {
+            city: "Viña del Mar",
+            address: "Av. Libertad 987",
+            phone: "+56 32 2222 222",
+            hours: "Lun-Vie: 09:00 - 18:30",
+            region: "Centro"
+        },
+        {
+            city: "Concepción",
+            address: "Autopista Concepción-Talcahuano 8000",
+            phone: "+56 41 2222 222",
+            hours: "Lun-Vie: 09:00 - 18:00",
+            region: "Sur"
+        },
+        {
+            city: "Puerto Montt",
+            address: "Ruta 5 Sur Km 1000",
+            phone: "+56 65 2222 222",
+            hours: "Lun-Vie: 09:00 - 18:00",
+            region: "Sur"
+        }
+    ]
+
+    return (
+        <section id="agencias" className="w-full py-24 bg-gray-50 text-gray-900 overflow-hidden relative">
+            <div className="container px-4 md:px-6 mx-auto relative z-10">
+                <ScrollReveal animation="fade-in" className="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6">
+                        Nuestras <span className="text-[#003fa2]">Agencias</span>
+                    </h2>
+                    <p className="text-gray-500 text-lg">
+                        Estamos presentes de Arica a Punta Arenas. Encuentra tu sucursal más cercana.
+                    </p>
+                </ScrollReveal>
+
+                {/* Map Visual (Stylized Placeholder) */}
+                <ScrollReveal animation="zoom-in" className="mb-16">
+                    <div className="w-full h-[400px] bg-[#003fa2] rounded-3xl relative overflow-hidden flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200')] bg-cover bg-center bg-no-repeat bg-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-700 group">
+                        <div className="bg-black/40 absolute inset-0 transition-opacity hover:bg-black/30" />
+                        <div className="relative z-10 text-center text-white p-8 border-4 border-white/20 backdrop-blur-sm rounded-none">
+                            <h3 className="text-3xl font-black uppercase mb-4">Cobertura Nacional</h3>
+                            <p className="text-xl font-medium mb-8">Más de 50 puntos de entrega en todo Chile</p>
+                            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#003fa2] font-bold uppercase h-12 px-8">
+                                Ver Mapa Completo <Navigation className="ml-2 w-5 h-5" />
+                            </Button>
+                        </div>
+                    </div>
+                </ScrollReveal>
+
+                {/* Agencies Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {agencies.map((agency, index) => (
+                        <ScrollReveal key={index} animation="slide-in-bottom" delay={index * 100}>
+                            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group">
+                                <CardContent className="p-6">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="p-3 bg-blue-50 rounded-full group-hover:bg-[#003fa2] transition-colors duration-300">
+                                            <MapPin className="w-6 h-6 text-[#003fa2] group-hover:text-white transition-colors duration-300" />
+                                        </div>
+                                        <span className="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                                            {agency.region}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-xl font-black uppercase text-gray-900 mb-2 group-hover:text-[#003fa2] transition-colors">{agency.city}</h3>
+                                    <p className="text-gray-500 text-sm mb-4 font-medium">{agency.address}</p>
+
+                                    <div className="space-y-2 border-t border-gray-100 pt-4">
+                                        <div className="flex items-center text-sm text-gray-600">
+                                            <Phone className="w-4 h-4 mr-2 text-gray-400" />
+                                            {agency.phone}
+                                        </div>
+                                        <div className="flex items-center text-sm text-gray-600">
+                                            <Clock className="w-4 h-4 mr-2 text-gray-400" />
+                                            {agency.hours}
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </ScrollReveal>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
